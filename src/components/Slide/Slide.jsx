@@ -1,7 +1,7 @@
 export const Slide = () => {
   return (
     <div>
-      <h1 className="bg">Bienvenido a mi portafolio</h1>
+      <h1 className="bold text-center">alo</h1>
     </div>
   );
 };
