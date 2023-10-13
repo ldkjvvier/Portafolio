@@ -1,7 +1,7 @@
 
 export const Contact = () => {
   return (
-    <section className="flex justify-center items-center gap-20">
+    <section className="flex justify-center items-center gap-20" id="contacto">
       <div className="px-6 py-24 sm:py-32 lg:px-8">
 
         <div className="mx-auto max-w-2xl text-center">

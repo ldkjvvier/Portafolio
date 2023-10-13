@@ -1,5 +1,5 @@
 import { Slide } from "./components/Slide/Slide";
-import { SobreMi } from "./components/SobreMi/SobreMi";
+import { Inicio } from "./components/Inicio/Inicio";
 import { Contact } from "./components/Contact/Contact";
 import { Header } from "./components/Header/Header";
 import { Footer } from "./components/Footer/Footer";
@@ -21,7 +21,7 @@ export default function App() {
           />
         </div>
         <Slide />
-        <SobreMi />
+        <Inicio />
         <Contact />
         
       </div>

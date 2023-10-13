@@ -1,6 +1,6 @@
-export const SobreMi = () => {
+export const Inicio = () => {
   return (
-    <section className="flex justify-center items-center gap-20 h-96 ">
+    <section className="flex justify-center items-center gap-20 h-screen " id="inicio">
     
       <div className="flex flex-col  text-start w-3/12">
         <h1 className="text-4xl font-bold bg-gradient-to-r from-blue-500 to bg-cyan-500 bg-clip-text text-transparent mb-2">

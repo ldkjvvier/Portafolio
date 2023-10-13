@@ -5,6 +5,12 @@ import { useState } from "react";
 export const Header = () => {
   const [darkMode, setDarkMode] = useState("black");
 
+  const scrollTo = (id) => {
+    const element = document.getElementById(id);
+    element.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+  }
+
+
   const toggleMode = () => {
     darkMode === "black" ? setDarkMode("white") : setDarkMode("black");
     darkMode === "black"
@@ -19,16 +25,16 @@ export const Header = () => {
       <div className="flex gap-3">
         <ul className="flex gap-3 ">
           <li>
-            <a href="#sobremi" className="hover:text-gray-400 dark:hover:text-blue-400 transition ">Inicio</a>
+            <a href="#inicio" className="hover:text-gray-400 dark:hover:text-blue-400 transition" onClick={() => scrollTo('inicio')}>Inicio</a>
           </li>
           <li>
-            <a href="#sobremi" className="hover:text-gray-400 dark:hover:text-blue-400 transition ">Sobre Mi</a>
+            <a href="#sobreMi" className="hover:text-gray-400 dark:hover:text-blue-400 transition" onClick={() => scrollTo('sobreMi')}>Sobre Mi</a>
           </li>
           <li>
-            <a href="#proyectos" className="hover:text-gray-400 dark:hover:text-blue-400  transition ">Proyectos</a>
+            <a href="#proyectos" className="hover:text-gray-400 dark:hover:text-blue-400  transition" onClick={() => scrollTo('proyectos')}>Proyectos</a>
           </li>
           <li>
-            <a href="#contacto" className="hover:text-gray-400 dark:hover:text-blue-400 transition ">Contacto</a>
+            <a href="#contacto" className="hover:text-gray-400 dark:hover:text-blue-400 transition" onClick={() => scrollTo('contacto')}>Contacto</a>
           </li>
         </ul>
         <div onClick={toggleMode}>
