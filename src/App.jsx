@@ -1,6 +1,7 @@
 import { Slide } from "./components/Slide/Slide";
 import { Inicio } from "./components/Inicio/Inicio";
 import { Contact } from "./components/Contact/Contact";
+import { SobreMi } from "./components/SobreMi/SobreMi";
 import { Header } from "./components/Header/Header";
 import { Footer } from "./components/Footer/Footer";
 export default function App() {
@@ -22,6 +23,7 @@ export default function App() {
         </div>
         <Slide />
         <Inicio />
+        <SobreMi/>
         <Contact />
         
       </div>
