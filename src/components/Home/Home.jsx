@@ -1,4 +1,4 @@
-export const Inicio = () => {
+export const Home = () => {
   return (
     <section className="flex justify-center items-center gap-20 h-screen " id="inicio">
     

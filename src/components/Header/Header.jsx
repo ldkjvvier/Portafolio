@@ -25,16 +25,16 @@ export const Header = () => {
       <div className="flex gap-3">
         <ul className="flex gap-3 ">
           <li>
-            <a href="#inicio" className="hover:text-gray-400 dark:hover:text-blue-400 transition" onClick={() => scrollTo('inicio')}>Inicio</a>
+            <a  className="hover:text-gray-400 dark:hover:text-blue-400 transition" onClick={() => scrollTo('inicio')}>Inicio</a>
           </li>
           <li>
-            <a href="#sobreMi" className="hover:text-gray-400 dark:hover:text-blue-400 transition" onClick={() => scrollTo('sobreMi')}>Sobre Mi</a>
+            <a  className="hover:text-gray-400 dark:hover:text-blue-400 transition" onClick={() => scrollTo('sobreMi')}>Sobre Mi</a>
           </li>
           <li>
-            <a href="#proyectos" className="hover:text-gray-400 dark:hover:text-blue-400  transition" onClick={() => scrollTo('proyectos')}>Proyectos</a>
+            <a className="hover:text-gray-400 dark:hover:text-blue-400  transition" onClick={() => scrollTo('proyectos')}>Proyectos</a>
           </li>
           <li>
-            <a href="#contacto" className="hover:text-gray-400 dark:hover:text-blue-400 transition" onClick={() => scrollTo('contacto')}>Contacto</a>
+            <a className="hover:text-gray-400 dark:hover:text-blue-400 transition" onClick={() => scrollTo('contacto')}>Contacto</a>
           </li>
         </ul>
         <div onClick={toggleMode}>

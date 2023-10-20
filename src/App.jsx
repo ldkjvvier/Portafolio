@@ -1,7 +1,9 @@
 import { Slide } from "./components/Slide/Slide";
-import { Inicio } from "./components/Inicio/Inicio";
-import { Contact } from "./components/Contact/Contact";
+import { Home } from "./components/Home/Home";
 import { SobreMi } from "./components/SobreMi/SobreMi";
+import { Proyects} from "./components/Proyects/Proyects"
+import { Contact } from "./components/Contact/Contact";
+
 import { Header } from "./components/Header/Header";
 import { Footer } from "./components/Footer/Footer";
 export default function App() {
@@ -22,10 +24,11 @@ export default function App() {
           />
         </div>
         <Slide />
-        <Inicio />
+        <Home />
         <SobreMi/>
+        <Proyects/>
         <Contact />
-        
+
       </div>
       <Footer />
     </div>
