@@ -37,7 +37,9 @@ export const Home = () => {
 			className="flex-block md:flex items-center mt-96 md:mt-0 h-screen w-full scroll-m-60"
 			id="sobreMi"
 		>
-			{showNotificacion && <Notificacion message={'Email copiado al portapapeles'} />}
+			{showNotificacion && (
+				<Notificacion message={'Email copiado al portapapeles'} />
+			)}
 			<div className="flex flex-col  text-start md:w-full sm:w-12/12 md:m-5 sm:m-0 gap-3">
 				<section>
 					{' '}
@@ -58,7 +60,7 @@ export const Home = () => {
 					<Tooltip text={'Github'}>
 						<span className="block bg-slate-100/80  dark:bg-transparent rounded-full p-1">
 							<a
-								href="https://www.github.com"
+								href="https://www.github.com/ldkjvvier"
 								target="_blank"
 								rel="noreferrer"
 							>
@@ -95,8 +97,8 @@ export const Home = () => {
 				</section>
 			</div>
 
-			<div className="hidden sm:block ">
-				<spline-viewer url="https://prod.spline.design/pxjpKQIBMJc6kFJU/scene.splinecode"></spline-viewer>
+			<div className="hidden sm:block">
+				<spline-viewer url="https://prod.spline.design/Evj8fK2J5nOkiW9l/scene.splinecode"></spline-viewer>
 			</div>
 		</section>
 	)

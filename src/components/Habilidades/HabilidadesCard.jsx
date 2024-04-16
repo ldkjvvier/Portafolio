@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 
 export const HabilidadesCard = ({ icon, title, color }) => {
 	return (
-		<div>
+		<div className=' transition hover:scale-110'>
 			<div
 				className={`${color} bg-opacity-20 dark:bg-opacity-30 rounded-lg p-3 cursor-pointer flex items-center justify-center`}
 			>
