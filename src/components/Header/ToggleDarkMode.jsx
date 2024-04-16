@@ -18,6 +18,11 @@ export const ToggleDarkMode = () => {
 	}
 
 	useEffect(() => {
+		/* Comprobar si existe el item darkMode */
+		if (!localStorage.getItem('darkMode')) {
+			/* Si no existe, lo creamos con el valor 'black' */
+			localStorage.setItem('darkMode', 'white')
+		}
 		/* Obtenemos el estado del modo oscuro del localStorage */
 		const darkMode = localStorage.getItem('darkMode')
 		/* Si el estado del modo oscuro existe, lo guardamos en el estado */
@@ -30,10 +35,10 @@ export const ToggleDarkMode = () => {
 
 	return (
 		<div onClick={toggleDarkMode}>
-			{darkMode === 'black' ? (
-				<MoonIcon color={darkMode} />
-			) : (
+			{darkMode != 'black' ? (
 				<SunIcon color={darkMode} />
+			) : (
+				<MoonIcon color={darkMode} />
 			)}
 		</div>
 	)

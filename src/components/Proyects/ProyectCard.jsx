@@ -1,4 +1,10 @@
-export const ProyectCard = ({ title, description, img, sitioWeb, codigo  }) => {
+export const ProyectCard = ({
+	title,
+	description,
+	img,
+	sitioWeb,
+	codigo,
+}) => {
 	return (
 		<li className=" w-66 h-96 bg-white dark:bg-slate-800/50  rounded-lg border border-gray-700">
 			<picture>
@@ -12,9 +18,7 @@ export const ProyectCard = ({ title, description, img, sitioWeb, codigo  }) => {
 				<h3 className="text-xl font-bold text-black dark:text-gray-200 mb-3">
 					{title}
 				</h3>
-				<p className="text-sm text-gray-800 dark:text-gray-300" style={{
-					'text-wrap': 'balance',
-				}}>
+				<p className="text-sm text-gray-800 dark:text-gray-300">
 					{description}
 				</p>
 			</div>
