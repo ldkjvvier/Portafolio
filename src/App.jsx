@@ -6,11 +6,11 @@ import { Contact } from './components/Contact/Contact'
 
 import { Header } from './components/Header/Header'
 import { Footer } from './components/Footer/Footer'
+
 export default function App() {
 	return (
-		<>
+		<div>
 			<Header />
-
 			<div className="mx-auto p-4 lg:w-[100ch]">
 				<div
 					className="absolute  top-[-0rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem] right-0"
@@ -24,7 +24,7 @@ export default function App() {
 						}}
 					/>
 				</div>
-
+				
 				<Home />
 				<Habilidades />
 				<Proyects />
@@ -54,6 +54,6 @@ export default function App() {
 				</div>
 			</div>
 			<Footer />
-		</>
+		</div>
 	)
 }

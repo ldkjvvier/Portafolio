@@ -5,7 +5,24 @@ import {
 	CvIcon,
 } from '../Icons/Icons'
 import { Tooltip } from '../Tooltip'
+import { Notificacion } from '../Notificacion'
+import { useState } from 'react'
+
 export const Home = () => {
+
+	// Notificacion email copiado
+	const [showNotificacion, setShowNotificacion] = useState(false)
+
+	const EmailCopy = () => {
+		const email = 'javier.a.mada@gmail.com'
+
+		navigator.clipboard.writeText(email)
+		setShowNotificacion(true)
+		setTimeout(() => {
+			setShowNotificacion(false)
+		}, 3000)
+	}
+	
 	const DownloadCv = () => {
 		const url = document.createElement('a')
 		url.href =
@@ -20,6 +37,7 @@ export const Home = () => {
 			className="flex-block md:flex items-center mt-96 md:mt-0 h-screen w-full scroll-m-60"
 			id="sobreMi"
 		>
+			{showNotificacion && <Notificacion message={'Email copiado al portapapeles'} />}
 			<div className="flex flex-col  text-start md:w-full sm:w-12/12 md:m-5 sm:m-0 gap-3">
 				<section>
 					{' '}
@@ -39,7 +57,11 @@ export const Home = () => {
 				<section className="flex gap-3">
 					<Tooltip text={'Github'}>
 						<span className="block bg-slate-100/80  dark:bg-transparent rounded-full p-1">
-							<a href="https://www.github.com" target="_blank" rel='noreferrer'>
+							<a
+								href="https://www.github.com"
+								target="_blank"
+								rel="noreferrer"
+							>
 								<GithubIcon />
 							</a>
 						</span>
@@ -56,10 +78,11 @@ export const Home = () => {
 						</span>
 					</Tooltip>
 					<Tooltip text={'Correo electronico'}>
-						<span className="block bg-slate-100/80 dark:bg-transparent rounded-full p-1">
-							<a href="mailto:javier.a.mada@gmail.com">
-								<EmailIcon />
-							</a>
+						<span
+							className="block bg-slate-100/80 dark:bg-transparent rounded-full p-1"
+							onClick={() => EmailCopy()}
+						>
+							<EmailIcon />
 						</span>
 					</Tooltip>
 					<Tooltip text={'Descargar CV'}>
