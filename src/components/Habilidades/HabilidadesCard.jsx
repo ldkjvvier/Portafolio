@@ -1,14 +1,14 @@
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
 
 export const HabilidadesCard = ({ icon, title, color }) => {
-  return (
-		<div className="w-auto">
+	return (
+		<div>
 			<div
-				className={`${color} bg-opacity-20 w-[72px] dark:bg-opacity-30 rounded-lg p-3 cursor-pointer`}
+				className={`${color} bg-opacity-20 dark:bg-opacity-30 rounded-lg p-3 cursor-pointer flex items-center justify-center`}
 			>
 				{icon}
 			</div>
-			<h3 className="block text-sm text-center leading-8 font-bold text-black dark:text-cyan-50 mb-3">
+			<h3 className="text-sm text-center leading-8 font-bold text-black dark:text-cyan-50 mb-3">
 				{title}
 			</h3>
 		</div>
@@ -16,7 +16,7 @@ export const HabilidadesCard = ({ icon, title, color }) => {
 }
 
 HabilidadesCard.propTypes = {
-  icon: PropTypes.node.isRequired,
-  title: PropTypes.string.isRequired,
-  color: PropTypes.string.isRequired,
-};
+	icon: PropTypes.node.isRequired,
+	title: PropTypes.string.isRequired,
+	color: PropTypes.string.isRequired,
+}

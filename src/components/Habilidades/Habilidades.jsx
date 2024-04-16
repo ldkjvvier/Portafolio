@@ -9,7 +9,7 @@ export const Habilidades = () => {
 			</div>
 
 			<div className="grid grid-cols-4 md:grid-cols-7 grid-rows-5 place-items-center">
-				<span>
+				<span className="w-[72px]">
 					<HabilidadesCard
 						icon={
 							<img
@@ -22,7 +22,7 @@ export const Habilidades = () => {
 						color={'bg-orange-500'}
 					/>
 				</span>
-				<span>
+				<span className="w-[72px]">
 					<HabilidadesCard
 						icon={
 							<img
@@ -36,7 +36,7 @@ export const Habilidades = () => {
 					/>
 				</span>
 
-				<span>
+				<span className="w-[72px]">
 					{' '}
 					<HabilidadesCard
 						icon={
@@ -50,7 +50,7 @@ export const Habilidades = () => {
 						color={'bg-yellow-500'}
 					/>
 				</span>
-				<span>
+				<span className="w-[72px]">
 					<HabilidadesCard
 						icon={
 							<img
@@ -63,7 +63,7 @@ export const Habilidades = () => {
 						color={'bg-blue-500'}
 					/>
 				</span>
-				<span>
+				<span className="w-[72px]">
 					<HabilidadesCard
 						icon={
 							<img
@@ -76,7 +76,7 @@ export const Habilidades = () => {
 						color={'bg-green-600'}
 					/>
 				</span>
-				<span>
+				<span className="w-[72px]">
 					<HabilidadesCard
 						icon={
 							<img
@@ -89,7 +89,7 @@ export const Habilidades = () => {
 						color={'bg-green-500'}
 					/>
 				</span>
-				<span>
+				<span className="w-[72px]">
 					<HabilidadesCard
 						icon={
 							<img
@@ -102,7 +102,7 @@ export const Habilidades = () => {
 						color={'bg-blue-500'}
 					/>
 				</span>
-				<span className="md:col-start-2">
+				<span className="md:col-start-2 w-[72px]">
 					<HabilidadesCard
 						icon={
 							<img
@@ -115,7 +115,7 @@ export const Habilidades = () => {
 						color={'bg-yellow-500'}
 					/>
 				</span>
-				<span>
+				<span className="w-[72px]">
 					<HabilidadesCard
 						icon={
 							<img
@@ -129,7 +129,7 @@ export const Habilidades = () => {
 					/>
 				</span>
 
-				<span>
+				<span className="w-[72px]">
 					<HabilidadesCard
 						icon={
 							<img
@@ -143,7 +143,7 @@ export const Habilidades = () => {
 					/>
 				</span>
 				{/* Redux */}
-				<span>
+				<span className="w-[72px]">
 					<HabilidadesCard
 						icon={
 							<img
@@ -157,7 +157,7 @@ export const Habilidades = () => {
 					/>
 				</span>
 				{/* Git */}
-				<span>
+				<span className="w-[72px]">
 					<HabilidadesCard
 						icon={
 							<img
