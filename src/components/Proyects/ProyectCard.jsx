@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 export const ProyectCard = ({
 	title,
 	description,
@@ -11,7 +13,7 @@ export const ProyectCard = ({
 				<img
 					src={img}
 					alt={title}
-					className="rounded-t-lg w-full max-h-44"
+					className="rounded-t-lg w-full max-h-44 object-cover"
 				/>
 			</picture>
 			<div className="flex flex-col p-3">
@@ -51,4 +53,12 @@ export const ProyectCard = ({
 			</footer>
 		</li>
 	)
+}
+
+ProyectCard.propTypes = {
+	title: PropTypes.string.isRequired,
+	description: PropTypes.string.isRequired,
+	img: PropTypes.string.isRequired,
+	sitioWeb: PropTypes.string.isRequired,
+	codigo: PropTypes.string.isRequired,
 }
