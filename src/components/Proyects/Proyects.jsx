@@ -12,7 +12,7 @@ export const Proyects = () => {
 				<ProyectCard
 					title={'Tic Tac Toe'}
 					description="Proyecto de juego de gato desarrollado en ReactJS, con
-					funcionalidad de juego contra la computador"
+					funcionalidad de juego contra la computadora."
 					img={'Images/TicTacToe.png'}
 					sitioWeb={''}
 					codigo={'https://github.com/ldkjvvier/Tic-Tac-Toe'}
@@ -21,7 +21,7 @@ export const Proyects = () => {
 					title={'Pokedex'}
 					description="
 					Proyecto de pokedex desarrollado en ReactJS, con funcionalidad de
-					busqueda de pokemones y visualización de sus detalles
+					busqueda de pokemones y visualización de sus detalles.
 				"
 					img={'Images/Pokedex.png'}
 					sitioWeb={''}
