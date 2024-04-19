@@ -24,6 +24,7 @@ export const Home = () => {
 	}
 	
 	const DownloadCv = () => {
+		
 		const url = document.createElement('a')
 		url.href =
 			'https://docs.google.com/document/d/19RmmmTdcQyST2vWox2jpx-CYo3YAnyQL/export?format=pdf'
@@ -81,17 +82,17 @@ export const Home = () => {
 					</Tooltip>
 					<Tooltip text={'Correo electronico'}>
 						<span
-							className="block bg-slate-100/80 dark:bg-transparent rounded-full p-1"
+							className="block bg-slate-100/80 dark:bg-transparent rounded-full p-1 cursor-pointer"
 							onClick={() => EmailCopy()}
 						>
 							<EmailIcon />
 						</span>
 					</Tooltip>
 					<Tooltip text={'Descargar CV'}>
-						<span className="block bg-slate-100/80 dark:bg-transparent rounded-full p-1">
-							<a onClick={DownloadCv}>
-								<CvIcon />
-							</a>
+						<span className="block bg-slate-100/80 dark:bg-transparent rounded-full p-1 cursor-pointer"
+							onClick={() => DownloadCv()}
+						>
+							<CvIcon />
 						</span>
 					</Tooltip>
 				</section>
