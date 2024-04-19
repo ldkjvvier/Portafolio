@@ -43,7 +43,7 @@ export const Home = () => {
 			<div className="flex flex-col  text-start md:w-full sm:w-12/12 md:m-5 sm:m-0 gap-3">
 				<section>
 					{' '}
-					<h1 className="text-4xl font-bold bg-gradient-to-r from-blue-500 to bg-cyan-500 bg-clip-text text-transparent ">
+					<h1 className="text-4xl font-bold bg-gradient-to-r from-blue-500 to bg-cyan-500 bg-clip-text text-transparent pb-1">
 						Javier Madariaga
 					</h1>
 					<h1 className="text-step-2 font-bold capitalize font-code text-black dark:text-white">
