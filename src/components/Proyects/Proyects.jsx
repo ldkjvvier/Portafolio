@@ -8,9 +8,9 @@ export const Proyects = () => {
 					Proyectos
 				</h2>
 			</div>
-			<ul className="grid  md:grid-cols-3 grid-rows-2 gap-4 place-items-center">
+			<ul className="grid grid-rows-2 gap-8 place-items-center">
 				<ProyectCard
-					title={'Tic Tac Toe'}
+					title={'Tic Tac Toe - 2024'}
 					description="Proyecto de juego de gato desarrollado en ReactJS, con
 					funcionalidad de juego contra la computadora."
 					img={'Images/TicTacToe.png'}
@@ -18,7 +18,7 @@ export const Proyects = () => {
 					codigo={'https://github.com/ldkjvvier/Tic-Tac-Toe'}
 				/>
 				<ProyectCard
-					title={'Pokedex'}
+					title={'Pokedex - 2024'}
 					description="
 					Proyecto de pokedex desarrollado en ReactJS, con funcionalidad de
 					busqueda de pokemones y visualización de sus detalles.
