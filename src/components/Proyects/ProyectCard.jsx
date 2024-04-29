@@ -30,7 +30,7 @@ export const ProyectCard = ({
 							/>
 						</li>
 						<li>
-							<h3 className="mb-0 font-bold truncate">{title}</h3>
+							<h3 className="mb-0 font-extrabold md:font-bold truncate text-sm md:text-lg">{title}</h3>
 						</li>
 						<li>
 							<a
