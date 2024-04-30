@@ -8,7 +8,7 @@ import { Tooltip } from '../Tooltip'
 import { Notificacion } from '../Notificacion'
 import { useState } from 'react'
 
-export const Home = () => {
+export const SobreMi = () => {
 
 	// Notificacion email copiado
 	const [showNotificacion, setShowNotificacion] = useState(false)
