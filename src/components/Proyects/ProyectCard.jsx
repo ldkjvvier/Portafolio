@@ -35,7 +35,7 @@ export const ProyectCard = () => {
 									/>
 								</li>
 								<li>
-									<h3 className="mb-0 font-extrabold md:font-bold truncate text-sm sm:text-xs md:text-lg">
+									<h3 className="mb-0 font-extrabold md:font-bold truncate text-xs sm:text-sm md:text-lg">
 										{proyecto.title}
 									</h3>
 								</li>
@@ -46,7 +46,7 @@ export const ProyectCard = () => {
 										rel="noreferrer"
 										className="text-black dark:text-gray-900 text-xs md:text-sm uppercase px-3 py-1 rounded-2xl bg-gradient-to-r from-[#ff80b5] to-[#9089fc] opacity-80 hover:opacity-100 transition-opacity duration-300 ease-in-out"
 									>
-										Sitio Web
+										Web
 									</a>
 								</li>
 								<li>
