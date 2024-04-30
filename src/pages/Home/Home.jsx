@@ -1,12 +1,12 @@
-import { SobreMi } from "../../components/SobreMi/SobreMi"
-import {Header} from "../../components/Header/Header"
-import { Habilidades } from "../../components/Habilidades/Habilidades"
-import { Proyects } from "../../components/Proyects/Proyects"
-import { Contact } from "../../components/Contact/Contact"
-import { Footer } from "../../components/Footer/Footer"
+import { SobreMi } from '../../components/SobreMi/SobreMi'
+import { Header } from '../../components/layout/Header'
+import { Habilidades } from '../../components/Habilidades/Habilidades'
+import { Proyects } from '../../components/Proyects/Proyects'
+import { Contact } from '../../components/Contact/Contact'
+import { Footer } from '../../components/layout/Footer'
 
 export const Home = () => {
-  return (
+	return (
 		<div>
 			<Header />
 			<div className="mx-auto p-4 lg:w-[100ch]">

@@ -1,4 +1,4 @@
-import { SunIcon, MoonIcon } from '../Icons/Icons'
+import { SunIcon, MoonIcon } from './Icons/Icons'
 import { useState } from 'react'
 import { useEffect } from 'react'
 

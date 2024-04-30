@@ -1,6 +1,5 @@
-import { ToggleDarkMode } from './ToggleDarkMode'
+import { ToggleDarkMode } from "../ToggleDarkMode"
 export const Header = () => {
-
 	const scrollTo = (id) => {
 		const element = document.getElementById(id)
 		element.scrollIntoView({
@@ -51,7 +50,7 @@ export const Header = () => {
 						</a>
 					</li>
 				</ul>
-				<span className='cursor-pointer'>
+				<span className="cursor-pointer">
 					<ToggleDarkMode />
 				</span>
 			</div>
