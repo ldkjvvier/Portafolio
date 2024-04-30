@@ -1,6 +1,6 @@
-import { SobreMi } from '../../components/SobreMi/SobreMi'
+import { AboutMe } from '../../components/AboutMe/AboutMe'
 import { Header } from '../../components/layout/Header'
-import { Habilidades } from '../../components/abilities/abilities'
+import { Skills } from '../../components/Skills/Skills'
 import { Proyects } from '../../components/Proyects/Proyects'
 import { Contact } from '../../components/Contact/Contact'
 import { Footer } from '../../components/layout/Footer'
@@ -23,8 +23,8 @@ export const Home = () => {
 					/>
 				</div>
 
-				<SobreMi />
-				<Habilidades />
+				<AboutMe />
+				<Skills />
 				<Proyects />
 				<Contact />
 				<div

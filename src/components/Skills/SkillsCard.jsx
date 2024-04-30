@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 
-export const HabilidadesCard = ({ icon, title, color }) => {
+export const SkillsCard = ({ icon, title, color }) => {
 	return (
 		<div className=' transition hover:scale-110'>
 			<div
@@ -15,7 +15,7 @@ export const HabilidadesCard = ({ icon, title, color }) => {
 	)
 }
 
-HabilidadesCard.propTypes = {
+SkillsCard.propTypes = {
 	icon: PropTypes.node.isRequired,
 	title: PropTypes.string.isRequired,
 	color: PropTypes.string.isRequired,

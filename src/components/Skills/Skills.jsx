@@ -1,5 +1,6 @@
-import { HabilidadesCard } from './abilitiesCard'
-export const Habilidades = () => {
+import { SkillsCard } from "./SkillsCard"
+
+export const Skills = () => {
 	return (
 		<div id="habilidades" className="scroll-m-36">
 			<div className="my-20 border-b border-gray-400 ">
@@ -10,7 +11,7 @@ export const Habilidades = () => {
 
 			<div className="grid grid-cols-4 md:grid-cols-7 grid-rows-5 place-items-center">
 				<span className="w-[72px]">
-					<HabilidadesCard
+					<SkillsCard
 						icon={
 							<img
 								src="https://cdn-icons-png.flaticon.com/512/732/732212.png"
@@ -23,7 +24,7 @@ export const Habilidades = () => {
 					/>
 				</span>
 				<span className="w-[72px]">
-					<HabilidadesCard
+					<SkillsCard
 						icon={
 							<img
 								src="https://cdn-icons-png.flaticon.com/512/732/732190.png"
@@ -38,7 +39,7 @@ export const Habilidades = () => {
 
 				<span className="w-[72px]">
 					{' '}
-					<HabilidadesCard
+					<SkillsCard
 						icon={
 							<img
 								src="https://res.cloudinary.com/dkbp6rk0s/image/upload/v1684983603/technologies-assets/jspng_qo7hoo.png"
@@ -51,7 +52,7 @@ export const Habilidades = () => {
 					/>
 				</span>
 				<span className="w-[72px]">
-					<HabilidadesCard
+					<SkillsCard
 						icon={
 							<img
 								src="https://res.cloudinary.com/dkbp6rk0s/image/upload/v1682702145/technologies-assets/react-logo_qnia0o.svg"
@@ -64,7 +65,7 @@ export const Habilidades = () => {
 					/>
 				</span>
 				<span className="w-[72px]">
-					<HabilidadesCard
+					<SkillsCard
 						icon={
 							<img
 								src="https://res.cloudinary.com/dkbp6rk0s/image/upload/v1684984279/technologies-assets/nodejspng_hzte7g.png"
@@ -77,7 +78,7 @@ export const Habilidades = () => {
 					/>
 				</span>
 				<span className="w-[72px]">
-					<HabilidadesCard
+					<SkillsCard
 						icon={
 							<img
 								src="https://res.cloudinary.com/dkbp6rk0s/image/upload/v1684984279/technologies-assets/mongopng_j6ztnm.png"
@@ -90,7 +91,7 @@ export const Habilidades = () => {
 					/>
 				</span>
 				<span className="w-[72px]">
-					<HabilidadesCard
+					<SkillsCard
 						icon={
 							<img
 								src="https://cdn-icons-png.flaticon.com/512/5968/5968313.png"
@@ -103,7 +104,7 @@ export const Habilidades = () => {
 					/>
 				</span>
 				<span className="md:col-start-2 w-[72px]">
-					<HabilidadesCard
+					<SkillsCard
 						icon={
 							<img
 								src="https://res.cloudinary.com/dkbp6rk0s/image/upload/v1682702148/technologies-assets/firebase-logo_fzecel.svg"
@@ -116,7 +117,7 @@ export const Habilidades = () => {
 					/>
 				</span>
 				<span className="w-[72px]">
-					<HabilidadesCard
+					<SkillsCard
 						icon={
 							<img
 								src="https://res.cloudinary.com/dkbp6rk0s/image/upload/v1682702145/technologies-assets/tailwind-logo_rfdyid.svg"
@@ -130,7 +131,7 @@ export const Habilidades = () => {
 				</span>
 
 				<span className="w-[72px]">
-					<HabilidadesCard
+					<SkillsCard
 						icon={
 							<img
 								src="https://static-00.iconduck.com/assets.00/bootstrap-icon-512x512-f3dudm5z.png"
@@ -144,7 +145,7 @@ export const Habilidades = () => {
 				</span>
 				{/* Redux */}
 				<span className="w-[72px]">
-					<HabilidadesCard
+					<SkillsCard
 						icon={
 							<img
 								src="https://res.cloudinary.com/dkbp6rk0s/image/upload/v1682702145/technologies-assets/redux-logo_bwg2wg.svg"
@@ -158,7 +159,7 @@ export const Habilidades = () => {
 				</span>
 				{/* Git */}
 				<span className="w-[72px]">
-					<HabilidadesCard
+					<SkillsCard
 						icon={
 							<img
 								src="https://res.cloudinary.com/dkbp6rk0s/image/upload/v1684985528/technologies-assets/gitpng_vtiuiv.png"

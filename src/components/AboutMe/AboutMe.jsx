@@ -8,12 +8,12 @@ import { Tooltip } from '../Tooltip'
 import { Notificacion } from '../Notificacion'
 import { useState } from 'react'
 
-export const SobreMi = () => {
+export const AboutMe = () => {
 
 	// Notificacion email copiado
 	const [showNotificacion, setShowNotificacion] = useState(false)
 
-	const EmailCopy = () => {
+	const handleEmailCopy = () => {
 		const email = 'javier.a.mada@gmail.com'
 
 		navigator.clipboard.writeText(email)
@@ -83,7 +83,7 @@ export const SobreMi = () => {
 					<Tooltip text={'Correo electronico'}>
 						<span
 							className="block bg-slate-100/80 dark:bg-transparent rounded-full p-1 cursor-pointer"
-							onClick={() => EmailCopy()}
+							onClick={() => handleEmailCopy()}
 						>
 							<EmailIcon />
 						</span>
