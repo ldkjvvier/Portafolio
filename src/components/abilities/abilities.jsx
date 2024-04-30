@@ -1,4 +1,4 @@
-import { HabilidadesCard } from './HabilidadesCard'
+import { HabilidadesCard } from './abilitiesCard'
 export const Habilidades = () => {
 	return (
 		<div id="habilidades" className="scroll-m-36">

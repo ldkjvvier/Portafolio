@@ -1,6 +1,6 @@
 import { SobreMi } from '../../components/SobreMi/SobreMi'
 import { Header } from '../../components/layout/Header'
-import { Habilidades } from '../../components/Habilidades/Habilidades'
+import { Habilidades } from '../../components/abilities/abilities'
 import { Proyects } from '../../components/Proyects/Proyects'
 import { Contact } from '../../components/Contact/Contact'
 import { Footer } from '../../components/layout/Footer'
