@@ -23,7 +23,7 @@ export const AboutMe = () => {
 		}, 3000)
 	}
 	
-	const DownloadCv = () => {
+	const HandleDownloadCv = () => {
 		
 		const url = document.createElement('a')
 		url.href =
@@ -89,8 +89,9 @@ export const AboutMe = () => {
 						</span>
 					</Tooltip>
 					<Tooltip text={'Descargar CV'}>
-						<span className="block bg-slate-100/80 dark:bg-transparent rounded-full p-1 cursor-pointer"
-							onClick={() => DownloadCv()}
+						<span
+							className="block bg-slate-100/80 dark:bg-transparent rounded-full p-1 cursor-pointer"
+							onClick={() => HandleDownloadCv()}
 						>
 							<CvIcon />
 						</span>
