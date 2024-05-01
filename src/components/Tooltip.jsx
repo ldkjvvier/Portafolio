@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 export const Tooltip = ({ children, text }) => {
 	return (
 		<div className="has-tooltip">
@@ -7,4 +8,9 @@ export const Tooltip = ({ children, text }) => {
 			</span>
 		</div>
 	)
+}
+
+Tooltip.propTypes = {
+	children: PropTypes.node.isRequired,
+	text: PropTypes.string.isRequired,
 }

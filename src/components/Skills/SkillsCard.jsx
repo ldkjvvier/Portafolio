@@ -8,7 +8,7 @@ export const SkillsCard = ({ icon, title, color }) => {
 			>
 				{icon}
 			</div>
-			<h3 className="text-sm text-center leading-8 font-bold text-black dark:text-cyan-50 mb-3">
+			<h3 className="text-sm text-center leading-8 font-bold text-black dark:text-cyan-50 mb-3 truncate">
 				{title}
 			</h3>
 		</div>
