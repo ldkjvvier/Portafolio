@@ -3,6 +3,7 @@ import { Header } from '../../components/layout/Header'
 import { Skills } from '../../components/Skills/Skills'
 import { Proyects } from '../../components/Proyects/Proyects'
 import { Contact } from '../../components/Contact/Contact'
+import { Inspiration } from '../../components/Inspiration/Inspiration'
 import { Footer } from '../../components/layout/Footer'
 
 export const Home = () => {
@@ -27,6 +28,7 @@ export const Home = () => {
 				<Skills />
 				<Proyects />
 				<Contact />
+				<Inspiration/>
 				<div
 					className="absolute inset-x-0 bottom-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:bottom-[-30rem]"
 					aria-hidden="true"
