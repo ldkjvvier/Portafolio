@@ -15,7 +15,7 @@ export const Inspiration = () => {
 					target="_blank"
 				>
 					<img
-						src="https://unavatar.io/midudev"
+						src="Images/inspiration/midudev.jpg"
 						alt="avatar midudev"
 					/>
 				</a>
@@ -24,7 +24,7 @@ export const Inspiration = () => {
 					target="_blank"
 				>
 					<img
-						src="https://yt3.googleusercontent.com/Z69fhRL9_OaXsDz-XsCUe2sGIqU7G1F5Mwl0PwlBsx_ll13K0nLb47q7_RMen7NHvzMVDgd2=s160-c-k-c0x00ffffff-no-rj"
+						src="Images/inspiration/holamundo.jpg"
 						alt="avatar HolaMundo"
 					/>
 				</a>{' '}
@@ -33,7 +33,7 @@ export const Inspiration = () => {
 					target="_blank"
 				>
 					<img
-						src="https://unavatar.io/mouredev"
+						src="Images/inspiration/mouredev.jpg"
 						alt="avatar MoureDev"
 					/>
 				</a>{' '}
@@ -42,7 +42,7 @@ export const Inspiration = () => {
 					target="_blank"
 				>
 					<img
-						src="https://yt3.googleusercontent.com/_8PV4sNd9CNRjFBH0Jts2oIMAGwPhKXPTZr9Ngr8awu104-NZJbupzUhPm3cXTF1ALTOW5az=s160-c-k-c0x00ffffff-no-rj"
+						src="Images/inspiration/deivchoi.jpg"
 						alt="avatar DeivChoi"
 					/>
 				</a>{' '}
@@ -51,7 +51,7 @@ export const Inspiration = () => {
 					target="_blank"
 				>
 					<img
-						src="https://yt3.googleusercontent.com/ytc/AIdro_nlI29kkP3d2OAKZTdDVgkDA6D7g7TfNvSKNBGTY-5cQHY=s160-c-k-c0x00ffffff-no-rj"
+						src="Images/inspiration/fazt.jpg"
 						alt="avatar Fazt"
 					/>
 				</a>
