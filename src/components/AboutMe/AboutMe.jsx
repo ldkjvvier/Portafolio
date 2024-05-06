@@ -23,16 +23,6 @@ export const AboutMe = () => {
 		}, 3000)
 	}
 	
-	const HandleDownloadCv = () => {
-		
-		const url = document.createElement('a')
-		url.href =
-			'https://docs.google.com/document/d/19RmmmTdcQyST2vWox2jpx-CYo3YAnyQL/export?format=pdf'
-
-		url.download = 'JavierMadariagaCV.pdf'
-		url.click()
-	}
-
 	return (
 		<section
 			className="flex-block md:flex items-center mt-96 md:mt-0 h-screen w-full scroll-m-60"
@@ -88,13 +78,15 @@ export const AboutMe = () => {
 							<EmailIcon />
 						</span>
 					</Tooltip>
-					<Tooltip text={'Descargar CV'}>
-						<span
+					<Tooltip text={'Visualizar CV'}>
+						<a
 							className="block bg-slate-100/80 dark:bg-transparent rounded-full p-1 cursor-pointer"
-							onClick={() => HandleDownloadCv()}
+							href="https://drive.google.com/file/d/1eQRgonGNZ_2AlT43b7v3-SDRd52QLhge/view?usp=sharing"
+							target='_blank'
+							rel='noreferrer'
 						>
 							<CvIcon />
-						</span>
+						</a>
 					</Tooltip>
 				</section>
 			</div>
