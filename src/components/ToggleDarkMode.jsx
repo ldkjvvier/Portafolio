@@ -34,7 +34,10 @@ export const ToggleDarkMode = () => {
 	}, [])
 
 	return (
-		<div onClick={toggleDarkMode}>
+		<div
+			onClick={toggleDarkMode}
+			className="hover:scale-110 transition-all text-black dark:text-white dark:hover:text-blue-400"
+		>
 			{darkMode != 'black' ? (
 				<SunIcon color={darkMode} />
 			) : (
