@@ -30,7 +30,7 @@ export const Home = () => {
 				<Contact />
 				<Inspiration/>
 				<div
-					className="absolute inset-x-0 bottom-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:bottom-[-30rem]"
+					className="absolute inset-x-0 bottom-[-100rem] md:bottom-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:bottom-[-30rem]"
 					aria-hidden="true"
 				>
 					<div
