@@ -40,7 +40,7 @@ export const AboutMe = () => {
 					<h1 className="text-step-2 font-bold capitalize font-code text-black dark:text-white">
 						FullStack Developer
 					</h1>
-					<p className="text-slate-500 mt-2">
+					<p className="mt-2 animate-fade-up dark:text-[#D1D1E9] text-[#333333]">
 						Analista Programador de inacap con 2 años de experiencia
 						en el desarrollo de aplicaciones web y móviles, con
 						conocimientos en React, NodeJS, MongoDB, MySQL, Firebase,
@@ -82,8 +82,8 @@ export const AboutMe = () => {
 						<a
 							className="block bg-slate-100/80 dark:bg-transparent rounded-full p-1 cursor-pointer"
 							href="https://drive.google.com/file/d/1eQRgonGNZ_2AlT43b7v3-SDRd52QLhge/view?usp=sharing"
-							target='_blank'
-							rel='noreferrer'
+							target="_blank"
+							rel="noreferrer"
 						>
 							<CvIcon />
 						</a>
