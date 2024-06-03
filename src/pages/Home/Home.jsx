@@ -10,7 +10,7 @@ export const Home = () => {
 	return (
 		<div>
 			<Header />
-			<div className="mx-auto p-4 lg:w-[100ch]">
+			<div className="mx-auto md:pt-16 p-4 lg:w-[100ch]">
 				<div
 					className="absolute  top-[-0rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem] right-0"
 					aria-hidden="true"
