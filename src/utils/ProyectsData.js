@@ -15,7 +15,7 @@ export const Proyectos = [
 		description:
 			'Proyecto de pokedex desarrollado en ReactJS, con funcionalidad de busqueda de pokemones y visualización de sus detalles.',
 		img: 'Images/proyects/Pokedex.png',
-		sitioWeb: '',
+		sitioWeb: 'https://pokedex-flame-zeta.vercel.app',
 		codigo: 'https://github.com/ldkjvvier/Pokedex',
 		imgPosicion: ['md:col-start-2', 'md:col-start-1'],
 	},
