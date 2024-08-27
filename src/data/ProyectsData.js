@@ -8,6 +8,7 @@ export const Proyectos = [
 		sitioWeb: 'https://ldkjvvier.github.io/Tic-Tac-Toe/',
 		codigo: 'https://github.com/ldkjvvier/Tic-Tac-Toe',
 		imgPosicion: ['md:col-start-1', 'md:col-start-2'],
+		position: 'left',
 	},
 	{
 		title: 'Pokedex - 2024',
@@ -18,5 +19,6 @@ export const Proyectos = [
 		sitioWeb: 'https://pokedex-flame-zeta.vercel.app',
 		codigo: 'https://github.com/ldkjvvier/Pokedex',
 		imgPosicion: ['md:col-start-2', 'md:col-start-1'],
+		position: 'right',
 	},
 ]

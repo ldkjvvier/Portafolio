@@ -8,12 +8,16 @@ export const ProyectCard = () => {
 					className="group grid md:grid-cols-2 rounded-lg gap-2 space-y-2 py-12"
 				>
 					<picture
-						className={`${proyecto.imgPosicion[0]} max-w-lg w-96 h-60 overflow-hidden rounded-2xl bg-gray-200 dark:bg-slate-900 border dark:border-slate-600 shadow-md`}
+						className={`
+							${proyecto.imgPosicion[0]} 
+							w-full flex
+							${proyecto.position != 'left' ? 'justify-end' : ''}
+						`}
 					>
 						<img
 							src={proyecto.img}
 							alt={proyecto.title}
-							className="object-cover group-hover:scale-110 transition-transform duration-500 ease-out"
+							className="object-cover group-hover:scale-110 max-w-lg w-96 h-60 transition-transform duration-500 ease-out overflow-hidden rounded-2xl bg-gray-200 dark:bg-slate-900 border dark:border-slate-600 shadow-md"
 						/>
 					</picture>
 					<div
