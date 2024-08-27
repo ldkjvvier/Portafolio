@@ -9,7 +9,8 @@ import { Notificacion } from '../Notificacion'
 import { useState } from 'react'
 
 export const AboutMe = () => {
-
+	const date = new Date()
+	const experience = date.getFullYear() - 2022
 	// Notificacion email copiado
 	const [showNotificacion, setShowNotificacion] = useState(false)
 
@@ -22,7 +23,7 @@ export const AboutMe = () => {
 			setShowNotificacion(false)
 		}, 3000)
 	}
-	
+
 	return (
 		<section
 			className="flex-block md:flex items-center mt-96 md:mt-0 h-screen w-full scroll-m-60"
@@ -41,10 +42,10 @@ export const AboutMe = () => {
 						FullStack Developer
 					</h1>
 					<p className="mt-2 animate-fade-up dark:text-[#D1D1E9] text-[#333333]">
-						Analista Programador de inacap con 2 años de experiencia
-						en el desarrollo de aplicaciones web y móviles, con
-						conocimientos en React, NodeJS, MongoDB, MySQL, Firebase,
-						Git, entre otros.
+						Analista Programador de inacap con {experience} años de
+						experiencia en el desarrollo de aplicaciones web y
+						móviles, con conocimientos en React, NodeJS, MongoDB,
+						MySQL, Firebase, Git, entre otros.
 					</p>
 				</section>
 				<section className="flex gap-3">
