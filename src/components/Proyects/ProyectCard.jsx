@@ -17,7 +17,7 @@ export const ProyectCard = () => {
 						/>
 					</picture>
 					<div
-						className={`${proyecto.imgPosicion[1]} md:row-start-1 flex flex-col justify-center p-3 text-gray-800 dark:text-gray-300`}
+						className={`${proyecto.imgPosicion[1]} md:row-start-1 flex flex-col justify-center p-3 text-gray-800/90 dark:text-gray-300`}
 					>
 						<div>
 							<p className="text-xl md:text-2xl font-extrabold">
@@ -34,7 +34,7 @@ export const ProyectCard = () => {
 									/>
 								</li>
 								<li>
-									<h3 className="mb-0 font-extrabold md:font-bold truncate text-xs sm:text-sm md:text-lg">
+									<h3 className="mb-0 font-extrabold md:font-bold truncate text-xs sm:text-sm md:text-lg text-gray-800 dark:text-gray-200">
 										{proyecto.title}
 									</h3>
 								</li>

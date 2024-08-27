@@ -38,10 +38,10 @@ export const AboutMe = () => {
 					<h1 className="text-4xl font-bold bg-gradient-to-r from-blue-500 to bg-cyan-500 bg-clip-text text-transparent pb-1">
 						Javier Madariaga
 					</h1>
-					<h1 className="text-step-2 font-bold capitalize font-code text-black dark:text-white">
+					<h1 className="text-step-2 font-bold capitalize font-code text-black dark:text-gray-100">
 						FullStack Developer
 					</h1>
-					<p className="mt-2 animate-fade-up dark:text-[#D1D1E9] text-[#333333]">
+					<p className="mt-2 animate-fade-up dark:text-[#D1D1E9] text-gray-400">
 						Analista Programador de inacap con {experience} años de
 						experiencia en el desarrollo de aplicaciones web y
 						móviles, con conocimientos en React, NodeJS, MongoDB,

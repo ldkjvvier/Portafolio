@@ -1,24 +1,21 @@
 import { useState } from 'react'
-
+import { CustomTitle } from '../CustomTitle'
 export const Contact = () => {
-	const [contactData, setContactData ] = useState({
-    name: '',
-    email: '',
-    message: ''
-  })
-  
-  const handleSubmit = (e) => {
+	const [contactData, setContactData] = useState({
+		name: '',
+		email: '',
+		message: '',
+	})
+
+	const handleSubmit = (e) => {
 		e.preventDefault()
 
 		const formData = new FormData(e.target)
 		const data = Object.fromEntries(formData)
-    setContactData(data)
-    console.log(contactData)
+		setContactData(data)
+		console.log(contactData)
 
-    location.href = `mailto:javier.a.mada@gmail.com?subject=${data.name} - ${data.email}&body=${contactData.message}`
-
-
-
+		location.href = `mailto:javier.a.mada@gmail.com?subject=${data.name} - ${data.email}&body=${contactData.message}`
 	}
 
 	return (
@@ -27,11 +24,7 @@ export const Contact = () => {
 			id="contacto"
 		>
 			<div className="py-24 sm:py-32 w-full">
-				<div className="my-20 border-b border-gray-400">
-					<h2 className="text-3xl font-bold tracking-tight text-slate-800 dark:text-white sm:text-4xl mb-3">
-						Contacto
-					</h2>
-				</div>
+				<CustomTitle title="Contacto" />
 				<form
 					action="#"
 					method="POST"
