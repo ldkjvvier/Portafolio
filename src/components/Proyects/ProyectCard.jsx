@@ -1,5 +1,4 @@
-import { Proyectos } from "../../utils/ProyectsData"
-
+import { Proyectos } from '../../data/ProyectsData'
 export const ProyectCard = () => {
 	return (
 		<>

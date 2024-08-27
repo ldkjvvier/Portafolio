@@ -74,4 +74,9 @@ export const skillsData = [
 		title: 'AWS Lambda',
 		color: 'bg-orange-600', // Naranja que representa el logo de AWS Lambda
 	},
+	{
+		icon: './habilities/nextjs.svg',
+		title: 'NextJS',
+		color: ' bg-black',
+	},
 ]

@@ -1,5 +1,5 @@
 import { SkillsCard } from './SkillsCard'
-import { skillsData } from '../../utils/SkillsData'
+import { skillsData } from '../../data/SkillsData'
 export const Skills = () => {
 	return (
 		<div id="habilidades" className="scroll-m-36">
@@ -9,7 +9,7 @@ export const Skills = () => {
 				</h2>
 			</div>
 
-			<div className="grid grid-cols-4 md:grid-cols-7 grid-rows-5 place-items-center">
+			<div className="grid grid-cols-4 md:grid-cols-8 grid-rows-5 place-items-center">
 				{skillsData.map((skill, index) => {
 					return (
 						<span className="w-[72px]" key={index}>
