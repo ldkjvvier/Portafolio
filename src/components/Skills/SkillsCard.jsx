@@ -9,7 +9,7 @@ export const SkillsCard = ({ icon, title, color }) => {
 				{icon}
 			</div>
 			<h3
-				className="text-sm text-center leading-8 font-bold text-black dark:text-cyan-50 mb-3 truncate"
+				className="text-sm text-center leading-8 font-bold text-black dark:text-gray-300 mb-3 truncate"
 				title={title}
 			>
 				{title}
