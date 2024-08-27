@@ -1,4 +1,6 @@
-import { UserIspiration } from "./UserInspiration"
+import { UserIspiration } from './UserInspiration'
+import { INSPIRATIONS } from '../../data/Inspirations'
+
 export const Inspiration = () => {
 	return (
 		<div className="grid place-items-center border border-slate-600 rounded-lg px-4 py-6 sm:px-8 sm:py-10 my-32 ">
@@ -13,26 +15,13 @@ export const Inspiration = () => {
 				</p>
 			</div>
 			<div className="grid grid-cols-5 place-items-center sm:grid-cols-5  w-[55%] mt-8">
-				<UserIspiration
-					username={'midudev'}
-					url={'https://www.youtube.com/c/midudev'}
-				/>
-				<UserIspiration
-					username={'HolaMundo'}
-					url={'https://www.youtube.com/@HolaMundoDev'}
-				/>
-				<UserIspiration
-					username={'MoureDev'}
-					url={'https://www.youtube.com/@mouredev'}
-				/>
-				<UserIspiration
-					username={'DeivChoi'}
-					url={'https://www.youtube.com/@DeivChoi'}
-				/>
-				<UserIspiration
-					username={'Fazt'}
-					url={'https://www.youtube.com/@FaztTech'}
-				/>
+				{INSPIRATIONS.map((inspiration, index) => (
+					<UserIspiration
+						key={index}
+						username={inspiration.username}
+						url={inspiration.url}
+					/>
+				))}
 			</div>
 		</div>
 	)
