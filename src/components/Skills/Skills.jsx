@@ -18,6 +18,7 @@ export const Skills = () => {
 									<img
 										src={skill.icon}
 										alt={skill.title}
+										loading="lazy"
 										className="w-12 h-12 select-none drag-none pointer-events-none"
 									/>
 								}
