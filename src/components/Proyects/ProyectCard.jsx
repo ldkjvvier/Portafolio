@@ -30,7 +30,7 @@ export const ProyectCard = () => {
 						className={`${proyecto.imgPosicion[1]} md:row-start-1 flex flex-col justify-center p-3 text-gray-800/90 dark:text-gray-300`}
 					>
 						<div>
-							<p className="text-xl md:text-2xl font-extrabold">
+							<p className="text-xl md:text-2xl font-extrabold text-pretty">
 								{proyecto.description}
 							</p>
 						</div>
