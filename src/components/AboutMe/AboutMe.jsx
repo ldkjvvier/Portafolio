@@ -63,7 +63,7 @@ export const AboutMe = () => {
 					<Tooltip text={'Linkedin'}>
 						<span className="block bg-slate-100/80  dark:bg-transparent rounded-full p-1">
 							<a
-								href="https://www.linkedin.com/in/javier-antonio-madariaga-diaz-993a96216/"
+								href="https://www.linkedin.com/in/javiermadariaga/"
 								target="_blank"
 								rel="noreferrer"
 							>
@@ -82,7 +82,7 @@ export const AboutMe = () => {
 					<Tooltip text={'Visualizar CV'}>
 						<a
 							className="block bg-slate-100/80 dark:bg-transparent rounded-full p-1 cursor-pointer"
-							href="https://drive.google.com/file/d/1eQRgonGNZ_2AlT43b7v3-SDRd52QLhge/view?usp=sharing"
+							href="https://drive.google.com/file/d/1n8A9CAx2cFubRQJFVtOzrKzhu2_oTJWx/view"
 							target="_blank"
 							rel="noreferrer"
 						>
