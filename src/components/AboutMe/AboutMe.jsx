@@ -7,6 +7,7 @@ import {
 import { Tooltip } from '../Tooltip'
 import { Notificacion } from '../Notificacion'
 import { useState } from 'react'
+import Spline from '@splinetool/react-spline'
 
 export const AboutMe = () => {
 	const date = new Date()
@@ -93,7 +94,10 @@ export const AboutMe = () => {
 			</div>
 
 			<div className="hidden sm:block">
-				<spline-viewer url="https://prod.spline.design/Evj8fK2J5nOkiW9l/scene.splinecode"></spline-viewer>
+				{/* Contenedor de carga que ocupa espacio */}
+				<div className="h-[600px] w-[544px]">
+					<Spline scene="https://prod.spline.design/Evj8fK2J5nOkiW9l/scene.splinecode" />
+				</div>
 			</div>
 		</section>
 	)
