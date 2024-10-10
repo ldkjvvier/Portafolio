@@ -14,11 +14,17 @@ export const ProyectCard = () => {
 							${proyecto.position != 'left' ? 'justify-end' : ''}
 						`}
 					>
-						<img
-							src={proyecto.img}
-							alt={proyecto.title}
-							className="object-cover group-hover:scale-110 max-w-lg w-96 h-60 transition-transform duration-500 ease-out overflow-hidden rounded-2xl bg-gray-200 dark:bg-slate-900 border dark:border-slate-600 shadow-md"
-						/>
+						<a
+							href={proyecto.sitioWeb}
+							target="_blank"
+							rel="noreferrer"
+						>
+							<img
+								src={proyecto.img}
+								alt={proyecto.title}
+								className="object-cover group-hover:scale-110 max-w-lg w-96 h-60 transition-transform duration-500 ease-out overflow-hidden rounded-2xl bg-gray-200 dark:bg-slate-900 border dark:border-slate-700/80 shadow-2xl shadow-black/60 cursor-pointer"
+							/>
+						</a>
 					</picture>
 					<div
 						className={`${proyecto.imgPosicion[1]} md:row-start-1 flex flex-col justify-center p-3 text-gray-800/90 dark:text-gray-300`}
