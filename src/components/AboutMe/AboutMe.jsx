@@ -4,11 +4,10 @@ import {
 	EmailIcon,
 	CvIcon,
 } from '../Icons/Icons'
-import { Tooltip } from '../Tooltip'
 import { Notificacion } from '../Notificacion'
 import { useState } from 'react'
 import Spline from '@splinetool/react-spline'
-
+import { ButtonTooltip } from './ButtonTooltip'
 export const AboutMe = () => {
 	const date = new Date()
 	const experience = date.getFullYear() - 2022
@@ -50,46 +49,30 @@ export const AboutMe = () => {
 					</p>
 				</section>
 				<section className="flex gap-3">
-					<Tooltip text={'Github'}>
-						<span className="block bg-slate-100/80  dark:bg-transparent rounded-full p-1">
-							<a
-								href="https://www.github.com/ldkjvvier"
-								target="_blank"
-								rel="noreferrer"
-							>
-								<GithubIcon />
-							</a>
-						</span>
-					</Tooltip>
-					<Tooltip text={'Linkedin'}>
-						<span className="block bg-slate-100/80  dark:bg-transparent rounded-full p-1">
-							<a
-								href="https://www.linkedin.com/in/javiermadariaga/"
-								target="_blank"
-								rel="noreferrer"
-							>
-								<LinkedinIcon />
-							</a>
-						</span>
-					</Tooltip>
-					<Tooltip text={'Correo electronico'}>
+					<ButtonTooltip
+						text={'Github'}
+						href={'https://www.github.com/ldkjvvier'}
+						icon={<GithubIcon />}
+					/>
+
+					<ButtonTooltip
+						text={'Linkedin'}
+						href={'https://www.linkedin.com/in/javiermadariaga/'}
+						icon={<LinkedinIcon />}
+					/>
+					<ButtonTooltip text={'Correo electronico'}>
 						<span
-							className="block bg-slate-100/80 dark:bg-transparent rounded-full p-1 cursor-pointer"
+							className="block dark:bg-transparent rounded-full p-1 cursor-pointer"
 							onClick={() => handleEmailCopy()}
 						>
 							<EmailIcon />
 						</span>
-					</Tooltip>
-					<Tooltip text={'Visualizar CV'}>
-						<a
-							className="block bg-slate-100/80 dark:bg-transparent rounded-full p-1 cursor-pointer"
-							href="https://drive.google.com/file/d/1n8A9CAx2cFubRQJFVtOzrKzhu2_oTJWx/view"
-							target="_blank"
-							rel="noreferrer"
-						>
-							<CvIcon />
-						</a>
-					</Tooltip>
+					</ButtonTooltip>
+					<ButtonTooltip
+						text={'Visualizar CV'}
+						href={'https://www.github.com/ldkjvvier'}
+						icon={<CvIcon />}
+					/>
 				</section>
 			</div>
 
