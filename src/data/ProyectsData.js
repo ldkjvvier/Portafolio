@@ -3,7 +3,7 @@ export const Proyectos = [
 		title: 'Tic Tac Toe - 2024',
 		id: 1,
 		description:
-			'Juego clásico de Tic Tac Toe desarrollado en ReactJS, donde puedes competir contra la computadora.',
+			'Juego clásico de Tic Tac Toe desarrollado en ReactJS, donde competir con personas en la misma computadora.',
 		img: 'Images/proyects/TicTacToe.webp',
 		sitioWeb: 'https://ldkjvvier.github.io/Tic-Tac-Toe/',
 		codigo: 'https://github.com/ldkjvvier/Tic-Tac-Toe',
