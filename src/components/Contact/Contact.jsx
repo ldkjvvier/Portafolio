@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { CustomTitle } from '../CustomTitle'
+import { ContactIcon } from '../Icons/Icons'
 export const Contact = () => {
 	const [contactData, setContactData] = useState({
 		name: '',
@@ -24,7 +25,7 @@ export const Contact = () => {
 			id="contacto"
 		>
 			<div className="py-24 sm:py-32 w-full">
-				<CustomTitle title="Contacto" />
+				<CustomTitle title="Contacto" icon={<ContactIcon />} />
 				<form
 					action="#"
 					method="POST"

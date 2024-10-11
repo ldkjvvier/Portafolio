@@ -148,3 +148,71 @@ export const DevIcon = () => {
 		</svg>
 	)
 }
+
+export const ProyectsIcon = () => {
+	return (
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			width="32"
+			height="32"
+			viewBox="0 0 24 24"
+			strokeWidth="2"
+			stroke="currentColor"
+			fill="none"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+		>
+			<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+			<path d="M14.5 4h2.5a3 3 0 0 1 3 3v10a3 3 0 0 1 -3 3h-10a3 3 0 0 1 -3 -3v-5"></path>
+			<path d="M6 5l-2 2l2 2"></path>
+			<path d="M10 9l2 -2l-2 -2"></path>
+		</svg>
+	)
+}
+
+export const ContactIcon = () => {
+	return (
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			width="32"
+			height="32"
+			viewBox="0 0 24 24"
+			strokeWidth="2"
+			stroke="currentColor"
+			fill="none"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+		>
+			<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+			<path d="M8 4h10a2 2 0 0 1 2 2v10m-.57 3.399c-.363 .37 -.87 .601 -1.43 .601h-10a2 2 0 0 1 -2 -2v-12"></path>
+			<path d="M10 16h6"></path>
+			<path d="M11 11a2 2 0 0 0 2 2m2 -2a2 2 0 0 0 -2 -2"></path>
+			<path d="M4 8h3"></path>
+			<path d="M4 12h3"></path>
+			<path d="M4 16h3"></path>
+			<path d="M3 3l18 18"></path>
+		</svg>
+	)
+}
+
+export const HabilitiesIcon = () => {
+	return (
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			width="32"
+			height="32"
+			viewBox="0 0 24 24"
+			strokeWidth="2"
+			stroke="currentColor"
+			fill="none"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+		>
+			<path
+				strokeLinecap="round"
+				strokeLinejoin="round"
+				d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25"
+			/>
+		</svg>
+	)
+}

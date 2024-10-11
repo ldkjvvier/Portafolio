@@ -1,10 +1,11 @@
 import { CustomTitle } from '../CustomTitle'
 import { SkillsCard } from './SkillsCard'
 import { skillsData } from '../../data/SkillsData'
+import { HabilitiesIcon } from '../Icons/Icons'
 export const Skills = () => {
 	return (
 		<div id="habilidades" className="scroll-m-36">
-			<CustomTitle title="Habilidades" />
+			<CustomTitle title="Habilidades" icon={<HabilitiesIcon />} />
 
 			<div className="grid grid-cols-4 md:grid-cols-8 grid-rows-5 place-items-center">
 				{skillsData.map((skill, index) => {
