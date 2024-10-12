@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { FormEvent, useState } from 'react'
 import { CustomTitle } from '../CustomTitle'
 import { ContactIcon } from '../Icons/Icons'
 export const Contact = () => {
@@ -8,11 +8,15 @@ export const Contact = () => {
 		message: '',
 	})
 
-	const handleSubmit = (e) => {
+	const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault()
 
-		const formData = new FormData(e.target)
-		const data = Object.fromEntries(formData)
+		const formData = new FormData(e.target as HTMLFormElement)
+		const data = Object.fromEntries(formData) as {
+			name: string;
+			email: string;
+			message: string;
+		};
 		setContactData(data)
 		console.log(contactData)
 

@@ -1,0 +1,20 @@
+interface SkillsCardProps {
+  icon: React.ReactNode;
+  title: string;
+  color: string;
+}
+
+export const SkillsCard = ({ icon, title, color }: SkillsCardProps) => {
+  return (
+    <div className="transition hover:scale-110" aria-label={`skill icon ${title}`}>
+      <div
+        className={`${color} bg-opacity-20 dark:bg-opacity-30 rounded-lg p-3 cursor-pointer flex items-center justify-center`}
+      >
+        {icon}
+      </div>
+      <h3 className="text-sm text-center leading-8 font-bold text-black dark:text-gray-300 mb-3 truncate" title={title}>
+        {title}
+      </h3>
+    </div>
+  );
+};
