@@ -1,5 +1,4 @@
-import { UserIspiration } from './UserInspiration';
-import { INSPIRATIONS } from '@/data/Inspirations';
+import { INSPIRATIONS } from '@/constants/Inspirations';
 export const Inspiration = () => {
   return (
     <div className="grid place-items-center border border-slate-600 rounded-lg px-4 py-6 sm:px-8 sm:py-10 my-32 ">
@@ -13,8 +12,16 @@ export const Inspiration = () => {
         </p>
       </div>
       <div className="grid grid-cols-5 place-items-center sm:grid-cols-5  w-[55%] mt-8">
-        {INSPIRATIONS.map((inspiration, index) => (
-          <UserIspiration key={index} username={inspiration.username} url={inspiration.url} />
+        {INSPIRATIONS.map((inspiration) => (
+          <a
+            className="z-50 w-16 h-16 rounded-full cursor-pointer border-4 overflow-hidden border-slate-500/20 sm:border-white/10"
+            target="_blank"
+            href={inspiration.url}
+            rel="noreferrer"
+            key={inspiration.id}
+          >
+            <img src={inspiration.icon} alt={`avatar ${inspiration.username}`} />
+          </a>
         ))}
       </div>
     </div>

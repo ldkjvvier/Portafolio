@@ -19,7 +19,7 @@ export const Header = () => {
           <li>
             <a
               className="hover:text-gray-400 dark:hover:text-blue-400 transition cursor-pointer"
-              onClick={() => scrollTo('sobreMi')}
+              onClick={() => scrollTo('about')}
             >
               Sobre Mi
             </a>
@@ -27,7 +27,7 @@ export const Header = () => {
           <li>
             <a
               className="hover:text-gray-400 dark:hover:text-blue-400 transition cursor-pointer"
-              onClick={() => scrollTo('habilidades')}
+              onClick={() => scrollTo('skills')}
             >
               Habilidades
             </a>
@@ -35,7 +35,7 @@ export const Header = () => {
           <li>
             <a
               className="hover:text-gray-400 dark:hover:text-blue-400  transition cursor-pointer"
-              onClick={() => scrollTo('proyectos')}
+              onClick={() => scrollTo('projects')}
             >
               Proyectos
             </a>
@@ -44,7 +44,7 @@ export const Header = () => {
           <li>
             <a
               className="hover:text-gray-400 dark:hover:text-blue-400 transition cursor-pointer"
-              onClick={() => scrollTo('contacto')}
+              onClick={() => scrollTo('contact')}
             >
               Contacto
             </a>

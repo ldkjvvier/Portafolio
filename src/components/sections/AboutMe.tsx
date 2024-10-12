@@ -2,7 +2,7 @@ import { GithubIcon, LinkedinIcon, EmailIcon, CvIcon } from '../Icons/Icons';
 import { Notificacion } from '../Notificacion';
 import { useState } from 'react';
 import Spline from '@splinetool/react-spline';
-import { ButtonTooltip } from './ButtonTooltip';
+import { Tooltip } from '../Tooltip';
 export const AboutMe = () => {
   const date = new Date();
   const experience = date.getFullYear() - 2022;
@@ -26,7 +26,7 @@ export const AboutMe = () => {
   };
 
   return (
-    <section className="flex-block md:flex items-center mt-96 md:mt-0 h-screen w-full scroll-m-60" id="sobreMi">
+    <section className="flex-block md:flex items-center mt-96 md:mt-0 h-screen w-full scroll-m-60">
       {showNotificacion && <Notificacion message={'Email copiado al portapapeles'} />}
       <div className="flex flex-col  text-start md:w-full sm:w-12/12 md:m-5 sm:m-0 gap-3">
         <section>
@@ -69,5 +69,27 @@ export const AboutMe = () => {
         </div>
       </div>
     </section>
+  );
+};
+
+interface ButtonTooltipProps {
+  text: string;
+  href?: string;
+  icon?: React.ReactNode;
+  children?: React.ReactNode;
+}
+
+const ButtonTooltip = ({ text, href, icon, children }: ButtonTooltipProps) => {
+  return (
+    <Tooltip text={text}>
+      {href && (
+        <span className="block dark:bg-transparent rounded-full p-1">
+          <a href={href} target="_blank" rel="noreferrer">
+            {icon}
+          </a>
+        </span>
+      )}
+      {children}
+    </Tooltip>
   );
 };

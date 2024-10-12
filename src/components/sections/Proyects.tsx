@@ -1,7 +1,7 @@
-import { Proyectos } from '@/data/ProyectsData';
-export const ProyectCard = () => {
+import { Proyectos } from '@/constants/ProyectsData';
+export const Proyects = () => {
   return (
-    <>
+    <ul className="grid grid-rows-2 gap-8">
       {Proyectos.map((proyecto) => (
         <li key={proyecto.id} className="group grid md:grid-cols-2 rounded-lg gap-2 space-y-2 py-12">
           <picture
@@ -31,7 +31,7 @@ export const ProyectCard = () => {
                   <img
                     src="https://avatars.githubusercontent.com/u/145422138?v=4"
                     alt="User GitHub Avatar"
-                    className="w-8 h-8 rounded-full"
+                    className="w-8 h-8 rounded-full drag-none pointer-events-none"
                   />
                 </li>
                 <li>
@@ -64,6 +64,6 @@ export const ProyectCard = () => {
           </div>
         </li>
       ))}
-    </>
+    </ul>
   );
 };

@@ -1,10 +1,7 @@
-import { AboutMe } from '../../components/AboutMe/AboutMe';
 import { Header } from '@/components/layout/Header';
-import { Skills } from '@/components/Skills/Skills';
-import { Proyects } from '@/components/Proyects/Proyects';
-import { Contact } from '@/components/Contact/Contact';
-import { Inspiration } from '@/components/Inspiration/Inspiration';
 import { Footer } from '@/components/layout/Footer';
+import { PAGE_SECTIONS } from '@/constants/PageSections';
+import { CustomTitle } from '@/components/CustomTitle';
 
 export const Home = () => {
   return (
@@ -24,11 +21,18 @@ export const Home = () => {
           />
         </div>
 
-        <AboutMe />
-        <Skills />
-        <Proyects />
-        <Contact />
-        <Inspiration />
+        {PAGE_SECTIONS.map((section) => {
+          const Component = section.component;
+          const Icon = section.icon;
+          return (
+            <>
+              {Icon && <CustomTitle title={section.title} icon={<Icon />} />}
+              <section key={section.id} id={section.id}>
+                <Component />
+              </section>
+            </>
+          );
+        })}
         <div
           className="absolute inset-x-0 bottom-[-100rem] md:bottom-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:bottom-[-30rem]"
           aria-hidden="true"
