@@ -23,7 +23,7 @@ export const Contact = () => {
 
   return (
     <section className="flex justify-center items-center gap-20">
-      <div className="py-24 sm:py-32 w-full">
+      <div className="pb-24 sm:pb-32 w-full">
         <form action="#" method="POST" onSubmit={(e) => handleSubmit(e)} className="mx-auto mt-16 max-w-xl sm:mt-20">
           <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2 w-full">
             <div className="sm:col-span-2">
