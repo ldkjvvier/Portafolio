@@ -5,7 +5,7 @@ export const Proyectos = [
     description:
       'Juego clásico de Tic Tac Toe desarrollado en ReactJS, donde competir con personas en la misma computadora.',
     img: '/Portafolio/images/proyects/TicTacToe.webp',
-    sitioWeb: 'https://tic-tac-toe-omega-fawn.vercel.app',
+    sitioWeb: 'https://tic-tac-toe-idkjvviers-projects.vercel.app',
     codigo: 'https://github.com/ldkjvvier/Tic-Tac-Toe',
     imgPosicion: ['md:col-start-1', 'md:col-start-2'],
     position: 'left'
