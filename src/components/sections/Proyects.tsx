@@ -14,7 +14,7 @@ export const Proyects = () => {
               <img
                 src={img}
                 alt={title}
-                className="object-cover group-hover:scale-110 max-w-lg w-96 h-60 transition-transform duration-500 ease-out overflow-hidden rounded-2xl bg-gray-200 dark:bg-slate-900 border dark:border-slate-700/80 shadow-2xl shadow-black/60 cursor-pointer"
+                className="object-cover group-hover:scale-105 group-hover:md:scale-110 max-w-lg w-96 h-60 transition-transform duration-500 ease-out overflow-hidden rounded-2xl bg-gray-200 dark:bg-slate-900 border dark:border-slate-700/80 shadow-2xl shadow-black/60 cursor-pointer"
               />
             </a>
           </picture>
