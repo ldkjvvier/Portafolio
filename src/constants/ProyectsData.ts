@@ -1,4 +1,15 @@
-export const Proyectos = [
+interface Proyecto {
+  title: string;
+  id: number;
+  description: string;
+  img: string;
+  sitioWeb: string;
+  codigo: string;
+  imgPosicion: string[];
+  position: 'left' | 'right';
+}
+
+export const Proyectos: Proyecto[] = [
   {
     title: 'Tic Tac Toe - 2024',
     id: 1,
