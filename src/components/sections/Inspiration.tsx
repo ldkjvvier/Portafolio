@@ -8,7 +8,7 @@ export const Inspiration = () => {
         </h2>
         <p className="z-20 leading-normal text-muted-foreground sm:text-lg sm:leading-7 md:max-w-[65%] text-gray-400">
           Quizás te interesen los siguientes perfiles. Los cuales me han ayudado y motivado a seguir adelante con este
-          mundo de la informatica.
+          mundo de la informática.
         </p>
       </div>
       <div className="grid grid-cols-5 place-items-center sm:grid-cols-5  w-[55%] mt-8">
