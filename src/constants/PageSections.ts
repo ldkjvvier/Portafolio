@@ -1,5 +1,5 @@
-import { Skills, Proyects, Contact, AboutMe, Inspiration } from '@/components/sections';
-import { HabilitiesIcon, ProyectsIcon, ContactIcon } from '@/components/Icons/Icons';
+import { Skills, Projects, Contact, AboutMe, Inspiration } from '@/components/sections';
+import { AbilitiesIcon, ProjectsIcon, ContactIcon } from '@/components/Icons/Icons';
 
 interface PageSection {
   id: string;
@@ -18,13 +18,13 @@ export const PAGE_SECTIONS: PageSection[] = [
     id: 'skills',
     title: 'Habilidades',
     component: Skills,
-    icon: HabilitiesIcon
+    icon: AbilitiesIcon
   },
   {
     id: 'projects',
     title: 'Proyectos',
-    component: Proyects,
-    icon: ProyectsIcon
+    component: Projects,
+    icon: ProjectsIcon
   },
   {
     id: 'contact',

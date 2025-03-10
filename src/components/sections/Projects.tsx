@@ -1,6 +1,6 @@
 import { Proyectos } from '@/constants/ProyectsData';
 
-export const Proyects = () => {
+export const Projects = () => {
   return (
     <ul className="grid grid-rows-2 gap-8">
       {Proyectos.map(({ id, web, img, title, imgPosition, position, description, github }) => (
