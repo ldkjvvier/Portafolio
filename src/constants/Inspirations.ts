@@ -1,4 +1,11 @@
-export const INSPIRATIONS = [
+interface Inspiration {
+  id: number;
+  username: string;
+  url: string;
+  icon: string;
+}
+
+export const INSPIRATIONS: Inspiration[] = [
   {
     id: 1,
     username: 'Midudev',
