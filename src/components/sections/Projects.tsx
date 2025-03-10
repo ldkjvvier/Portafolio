@@ -1,9 +1,9 @@
-import { Proyectos } from '@/constants/ProyectsData';
+import { PROJECTS } from '@/constants/ProjectsData';
 
 export const Projects = () => {
   return (
     <ul className="grid grid-rows-2 gap-8">
-      {Proyectos.map(({ id, web, img, title, imgPosition, position, description, github }) => (
+      {PROJECTS.map(({ id, web, img, title, imgPosition, position, description, github }) => (
         <li key={id} className="group grid md:grid-cols-2 rounded-lg gap-2 space-y-2 py-12">
           <picture
             className={`w-full flex justify-center sm:justify-center ${

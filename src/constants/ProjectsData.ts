@@ -1,15 +1,15 @@
-interface Proyecto {
+interface Project {
   title: string;
   id: number;
   description: string;
   img: string;
   web: string;
   github: string;
-  imgPosition: string[];
+  imgPosition: ['md:col-start-1', 'md:col-start-2'] | ['md:col-start-2', 'md:col-start-1'];
   position: 'left' | 'right';
 }
 
-export const Proyectos: Proyecto[] = [
+export const PROJECTS: Project[] = [
   {
     title: 'Tic Tac Toe - 2024',
     id: 1,
@@ -24,7 +24,7 @@ export const Proyectos: Proyecto[] = [
   {
     title: 'Pokedex - 2024',
     id: 2,
-    description: 'Aplicación de Pokedex en ReactJS que permite buscar pokemones y ver detalles de cada uno.',
+    description: 'Aplicación de Pokedex en ReactJS que permite buscar Pokemones y ver detalles de cada uno.',
     img: '/Portafolio/Images/projects/Pokedex.webp',
     web: 'https://pokedex-flame-zeta.vercel.app',
     github: 'https://github.com/ldkjvvier/Pokedex',

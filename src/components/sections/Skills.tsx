@@ -1,8 +1,8 @@
-import { skillsData } from '@/constants/SkillsData';
+import { SKILLS } from '@/constants/SkillsData';
 export const Skills = () => {
   return (
     <div className="grid grid-cols-4 md:grid-cols-8 grid-rows-5 place-items-center">
-      {skillsData.map((skill, index) => {
+      {SKILLS.map((skill, index) => {
         return (
           <span className="w-[72px]" key={index}>
             <div className="transition hover:scale-110" aria-label={`skill icon ${skill.title}`}>
