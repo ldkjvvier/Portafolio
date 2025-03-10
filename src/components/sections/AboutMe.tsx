@@ -1,13 +1,12 @@
-import { GithubIcon, LinkedinIcon, EmailIcon, CvIcon } from '../Icons/Icons';
-import { Notificacion } from '../Notificacion';
+import { GithubIcon, LinkedInIcon, EmailIcon, CvIcon } from '../Icons/Icons';
+import { Notification } from '../Notification';
 import { useState } from 'react';
 import Spline from '@splinetool/react-spline';
 import { Tooltip } from '../Tooltip';
 export const AboutMe = () => {
   const date = new Date();
   const experience = date.getFullYear() - 2022;
-  // Notificacion email copiado
-  const [showNotificacion, setShowNotificacion] = useState(false);
+  const [showNotification, setShowNotification] = useState(false);
 
   const handleEmailCopy = (): void => {
     const email = 'javier.a.mada@gmail.com';
@@ -15,9 +14,9 @@ export const AboutMe = () => {
     navigator.clipboard
       .writeText(email)
       .then(() => {
-        setShowNotificacion(true);
+        setShowNotification(true);
         setTimeout(() => {
-          setShowNotificacion(false);
+          setShowNotification(false);
         }, 3000);
       })
       .catch((err) => {
@@ -27,7 +26,7 @@ export const AboutMe = () => {
 
   return (
     <section className="flex-block md:flex items-center mt-96 md:mt-0 h-screen w-full scroll-m-60">
-      {showNotificacion && <Notificacion message={'Email copiado al portapapeles'} />}
+      {showNotification && <Notification message={'Email copiado al portapapeles'} />}
       <div className="flex flex-col  text-start md:w-full sm:w-12/12 md:m-5 sm:m-0 gap-3">
         <section>
           {' '}
@@ -38,7 +37,7 @@ export const AboutMe = () => {
             FullStack Developer
           </h1>
           <p className="mt-2 animate-fade-up dark:text-[#D1D1E9] text-gray-400">
-            Analista Programador de inacap con {experience} años de experiencia en el desarrollo de aplicaciones web y
+            Analista Programador de Inacap con {experience} años de experiencia en el desarrollo de aplicaciones web y
             móviles, con conocimientos en React, NodeJS, MongoDB, MySQL, Firebase, Git, entre otros.
           </p>
         </section>
@@ -46,11 +45,11 @@ export const AboutMe = () => {
           <ButtonTooltip text={'Github'} href={'https://www.github.com/ldkjvvier'} icon={<GithubIcon />} />
 
           <ButtonTooltip
-            text={'Linkedin'}
+            text={'LinkedIn'}
             href={'https://www.linkedin.com/in/javiermadariaga/'}
-            icon={<LinkedinIcon />}
+            icon={<LinkedInIcon />}
           />
-          <ButtonTooltip text={'Correo electronico'}>
+          <ButtonTooltip text={'Correo electrónico'}>
             <span
               className="block dark:bg-transparent rounded-full p-1 cursor-pointer"
               onClick={() => handleEmailCopy()}

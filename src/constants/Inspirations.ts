@@ -1,7 +1,7 @@
 export const INSPIRATIONS = [
   {
     id: 1,
-    username: 'midudev',
+    username: 'Midudev',
     url: 'https://www.youtube.com/c/midudev',
     icon: '/Portafolio/Images/inspiration/midudev.jpg'
   },

@@ -11,7 +11,7 @@ export const GithubIcon = () => {
     </svg>
   );
 };
-export const LinkedinIcon = () => {
+export const LinkedInIcon = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
