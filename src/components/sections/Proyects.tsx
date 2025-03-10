@@ -3,14 +3,14 @@ import { Proyectos } from '@/constants/ProyectsData';
 export const Proyects = () => {
   return (
     <ul className="grid grid-rows-2 gap-8">
-      {Proyectos.map(({ id, sitioWeb, img, title, imgPosicion, position, description, codigo }) => (
+      {Proyectos.map(({ id, web, img, title, imgPosition, position, description, github }) => (
         <li key={id} className="group grid md:grid-cols-2 rounded-lg gap-2 space-y-2 py-12">
           <picture
             className={`w-full flex justify-center sm:justify-center ${
               position !== 'left' ? 'md:justify-end' : 'md:justify-start'
             }`}
           >
-            <a href={sitioWeb} target="_blank" rel="noreferrer">
+            <a href={web} target="_blank" rel="noreferrer">
               <img
                 src={img}
                 alt={title}
@@ -19,7 +19,7 @@ export const Proyects = () => {
             </a>
           </picture>
           <div
-            className={`${imgPosicion[1]} md:row-start-1 flex flex-col justify-center p-3 text-gray-800/90 dark:text-gray-300`}
+            className={`${imgPosition[1]} md:row-start-1 flex flex-col justify-center p-3 text-gray-800/90 dark:text-gray-300`}
           >
             <p className="text-xl md:text-2xl font-extrabold text-pretty">{description}</p>
             <footer className="mt-2">
@@ -37,8 +37,8 @@ export const Proyects = () => {
                   </h3>
                 </li>
                 {[
-                  { href: sitioWeb, text: 'Web' },
-                  { href: codigo, text: 'Código' }
+                  { href: web, text: 'Web' },
+                  { href: github, text: 'Código' }
                 ].map(({ href, text }) => (
                   <li key={text}>
                     <a
