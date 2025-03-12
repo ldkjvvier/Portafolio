@@ -52,7 +52,11 @@ export const AboutMe = () => {
               <EmailIcon />
             </span>
           </ButtonTooltip>
-          <ButtonTooltip text={'Visualizar CV'} href={'https://www.github.com/ldkjvvier'} icon={<CvIcon />} />
+          <ButtonTooltip
+            text={'Visualizar CV'}
+            href={'https://drive.google.com/file/d/17oFnIEoHa-3AuWYAxN0y33tL_FlVoHGn/view'}
+            icon={<CvIcon />}
+          />
         </section>
       </div>
 
