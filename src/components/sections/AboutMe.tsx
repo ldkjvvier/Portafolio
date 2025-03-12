@@ -23,7 +23,7 @@ export const AboutMe = () => {
   };
 
   return (
-    <section className="flex-block md:flex items-center my-96 md:mt-0 w-full">
+    <section className="flex-block md:flex items-center my-96 md:mt-12 w-full">
       {showNotification && <Notification message={'Email copiado al portapapeles'} />}
       <div className="flex flex-col  text-start md:w-full sm:w-12/12 md:m-5 sm:m-0 gap-3">
         <section>
