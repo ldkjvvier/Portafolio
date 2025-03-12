@@ -27,11 +27,7 @@ export const Header = () => {
               </li>
             ))}
           </ul>
-
-          {/* Botón de Dark Mode */}
-          <span className="cursor-pointer transition-transform duration-200 ease-in-out hover:scale-110">
-            <ToggleDarkMode />
-          </span>
+          <ToggleDarkMode />
         </nav>
       </div>
     </header>

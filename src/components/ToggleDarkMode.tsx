@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 
 export const ToggleDarkMode = () => {
   const [themeMode, setThemeMode] = useState('system');
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const applyThemeMode = (mode: string) => {
     if (mode === 'dark') {
@@ -18,20 +19,11 @@ export const ToggleDarkMode = () => {
     }
   };
 
-  const toggleThemeMode = () => {
-    const nextMode = themeMode === 'light' ? 'dark' : themeMode === 'dark' ? 'system' : 'light';
-    setThemeMode(nextMode);
-    localStorage.setItem('themeMode', nextMode);
-    applyThemeMode(nextMode);
-  };
-
   useEffect(() => {
-    // Verificar si hay una preferencia almacenada
     const storedTheme = localStorage.getItem('themeMode') ?? 'system';
     setThemeMode(storedTheme);
     applyThemeMode(storedTheme);
 
-    // Escuchar cambios en el esquema de color del sistema
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
     const handleChange = () => {
       if (themeMode === 'system') {
@@ -44,13 +36,61 @@ export const ToggleDarkMode = () => {
       mediaQuery.removeEventListener('change', handleChange);
     };
   }, [themeMode]);
-
+  const buttonStyle = 'w-full text-left p-2 rounded hover:bg-neutral-200 dark:hover:bg-neutral-700';
   return (
-    <div
-      onClick={toggleThemeMode}
-      className="hover:scale-110 transition-all text-black dark:text-white dark:hover:text-blue-400"
-    >
-      {themeMode === 'light' ? <SunIcon /> : themeMode === 'dark' ? <MoonIcon /> : <SystemIcon />}
+    <div className="relative cursor-pointer transition-transform duration-200 ease-in-out">
+      <button
+        className="hover:scale-125 transition-all text-black dark:text-white dark:hover:text-blue-400"
+        onClick={() => setMenuOpen((prev) => !prev)}
+      >
+        {themeMode === 'light' ? <SunIcon /> : themeMode === 'dark' ? <MoonIcon /> : <SystemIcon />}
+      </button>
+
+      {menuOpen && (
+        <div className="absolute top-10 right-0 min-w-32 rounded-md border border-neutral-100 bg-neutral-100 p-1 text-sm shadow-[0_3px_10px_rgb(0,0,0,0.2)] dark:border-neutral-500/20 dark:bg-neutral-500">
+          <ul>
+            <li>
+              <button
+                className={buttonStyle}
+                onClick={() => {
+                  setThemeMode('light');
+                  localStorage.setItem('themeMode', 'light');
+                  applyThemeMode('light');
+                  setMenuOpen(false);
+                }}
+              >
+                Light
+              </button>
+            </li>
+            <li>
+              <button
+                className={buttonStyle}
+                onClick={() => {
+                  setThemeMode('dark');
+                  localStorage.setItem('themeMode', 'dark');
+                  applyThemeMode('dark');
+                  setMenuOpen(false);
+                }}
+              >
+                Dark
+              </button>
+            </li>
+            <li>
+              <button
+                className={buttonStyle}
+                onClick={() => {
+                  setThemeMode('system');
+                  localStorage.setItem('themeMode', 'system');
+                  applyThemeMode('system');
+                  setMenuOpen(false);
+                }}
+              >
+                System
+              </button>
+            </li>
+          </ul>
+        </div>
+      )}
     </div>
   );
 };
