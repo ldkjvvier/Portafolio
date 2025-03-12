@@ -30,6 +30,10 @@ body {
   min-height: 100dvh; /* Se cambia height a min-height para evitar problemas en móviles */
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Tooltip */
 .has-tooltip {
   position: relative;

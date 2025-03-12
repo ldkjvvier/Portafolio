@@ -15,7 +15,7 @@ const typeClass = {
 
 export const Experience = () => {
   return (
-    <ol className="relative mx-3.5 mt-16 space-y-20 border-s-2 border-gray-200 dark:border-gray-700">
+    <ol className="relative mx-3.5 mt-16 border-s-2 border-gray-200 dark:border-gray-700">
       {EXPERIENCES.map((exp, index) => {
         const startDateFormatted = formatDate(exp.startDate);
         const endDateFormatted = exp.isCurrent ? 'Presente' : formatDate(exp.endDate);

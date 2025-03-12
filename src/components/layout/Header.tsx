@@ -1,36 +1,38 @@
 import { ToggleDarkMode } from '../ToggleDarkMode';
 import { PAGE_SECTIONS } from '@/constants/PageSections';
+
 export const Header = () => {
-  const scrollTo = (id: string) => {
-    const element = document.getElementById(id);
-    if (!element) return;
-    element.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start',
-      inline: 'nearest'
-    });
-  };
-  const INCLUDED_SECTIONS = ['about', 'skills', 'projects', 'contact'];
+  const INCLUDED_SECTIONS = ['about', 'experience', 'skills', 'projects'];
 
   return (
-    <header className="z-50 border-b border-gray-100 transition-all  dark:border-gray-600 shadow-sm w-full flex justify-around bg-white dark:bg-background p-5 text-black dark:text-white fixed top-0 opacity-95">
-      <div className="hover:scale-125 hidden md:block font-semibold transition text-xl cursor-pointer">{'</>'}</div>
-      <div className="flex gap-3">
-        <ul className="flex gap-3 font-semibold">
-          {PAGE_SECTIONS.filter(({ id }) => INCLUDED_SECTIONS.includes(id)).map(({ id, title }) => (
-            <li key={id}>
-              <a
-                className="hover:text-gray-400 dark:hover:text-blue-400 transition cursor-pointer"
-                onClick={() => scrollTo(id)}
-              >
-                {title}
-              </a>
-            </li>
-          ))}
-        </ul>
-        <span className="cursor-pointer">
-          <ToggleDarkMode />
-        </span>
+    <header className="z-50 border-b border-gray-200 dark:border-gray-700 shadow-md w-full bg-white dark:bg-gray-900 text-gray-900 dark:text-white fixed top-0 opacity-95 transition-all">
+      <div className="max-w-screen-xl mx-auto flex justify-center md:justify-between items-center px-4 sm:px-10 md:px-20 lg:px-36 py-4">
+        {/* Ícono de código */}
+        <div className="hidden md:block text-xl font-semibold cursor-pointer transition-transform duration-200 ease-in-out hover:scale-110">
+          {'</>'}
+        </div>
+
+        {/* Menú de navegación */}
+        <nav className="flex gap-6 items-center">
+          <ul className="flex gap-5 font-medium">
+            {PAGE_SECTIONS.filter(({ id }) => INCLUDED_SECTIONS.includes(id)).map(({ id, title, label }) => (
+              <li key={id}>
+                <a
+                  className="cursor-pointer transition-colors duration-200 ease-in-out hover:text-gray-700 dark:hover:text-blue-300"
+                  aria-label={title}
+                  href={`#${id}`}
+                >
+                  {label ?? title}
+                </a>
+              </li>
+            ))}
+          </ul>
+
+          {/* Botón de Dark Mode */}
+          <span className="cursor-pointer transition-transform duration-200 ease-in-out hover:scale-110">
+            <ToggleDarkMode />
+          </span>
+        </nav>
       </div>
     </header>
   );

@@ -25,14 +25,13 @@ export const Home = () => {
           const Component = section.component;
           const Icon = section.icon;
           return (
-            <>
+            <section key={section.id} id={section.id} className="scroll-mt-24 md:scroll-mt-26">
               {Icon && <CustomTitle title={section.title} icon={<Icon />} />}
-              <section key={section.id} id={section.id}>
-                <Component />
-              </section>
-            </>
+              <Component />
+            </section>
           );
         })}
+
         <div
           className="absolute inset-x-0 bottom-[-100rem] md:bottom-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:bottom-[-30rem]"
           aria-hidden="true"
