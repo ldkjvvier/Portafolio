@@ -1,9 +1,10 @@
-import { Skills, Projects, Contact, AboutMe, Inspiration, Experience } from '@/components/sections';
-import { AbilitiesIcon, ProjectsIcon, ContactIcon, ExperienceIcon } from '@/components/Icons/Icons';
+import { Skills, Projects, AboutMe, Inspiration, Experience } from '@/components/sections';
+import { AbilitiesIcon, ProjectsIcon, ExperienceIcon } from '@/components/Icons/Icons';
 
 interface PageSection {
   id: string;
   title: string;
+  label?: string;
   component: React.FC;
   icon?: React.FC;
 }
@@ -17,6 +18,7 @@ export const PAGE_SECTIONS: PageSection[] = [
   {
     id: 'experience',
     title: 'Experiencia laboral',
+    label: 'Experiencia',
     component: Experience,
     icon: ExperienceIcon
   },
@@ -31,12 +33,6 @@ export const PAGE_SECTIONS: PageSection[] = [
     title: 'Proyectos',
     component: Projects,
     icon: ProjectsIcon
-  },
-  {
-    id: 'contact',
-    title: 'Contacto',
-    component: Contact,
-    icon: ContactIcon
   },
   {
     id: 'inspiration',
