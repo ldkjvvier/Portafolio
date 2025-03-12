@@ -1,27 +1,25 @@
 import { GithubIcon, LinkedInIcon, EmailIcon, CvIcon } from '../Icons/Icons';
 import { Notification } from '../Notification';
-import { useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import Spline from '@splinetool/react-spline';
 import { Tooltip } from '../Tooltip';
 export const AboutMe = () => {
-  const date = new Date();
-  const experience = date.getFullYear() - 2022;
+  const experience = useMemo(() => new Date().getFullYear() - 2022, []);
   const [showNotification, setShowNotification] = useState(false);
+
+  useEffect(() => {
+    if (showNotification) {
+      const timer = setTimeout(() => setShowNotification(false), 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [showNotification]);
 
   const handleEmailCopy = (): void => {
     const email = 'javier.a.mada@gmail.com';
-
     navigator.clipboard
       .writeText(email)
-      .then(() => {
-        setShowNotification(true);
-        setTimeout(() => {
-          setShowNotification(false);
-        }, 3000);
-      })
-      .catch((err) => {
-        console.error('Error al copiar el correo electrónico', err);
-      });
+      .then(() => setShowNotification(true))
+      .catch((err) => console.error('Error al copiar el correo electrónico', err));
   };
 
   return (
@@ -30,7 +28,7 @@ export const AboutMe = () => {
       <div className="flex flex-col  text-start md:w-full sm:w-12/12 md:m-5 sm:m-0 gap-3">
         <section>
           {' '}
-          <h1 className="text-4xl font-bold bg-gradient-to-r from-blue-500 to bg-cyan-500 bg-clip-text text-transparent pb-1">
+          <h1 className="text-4xl font-bold bg-gradient-to-r from-blue-500 via-blue-400 to-cyan-500 bg-clip-text text-transparent pb-1 dark:drop-shadow-lg">
             Javier Madariaga
           </h1>
           <h1 className="text-step-2 font-bold capitalize font-code text-black dark:text-gray-200">
