@@ -36,6 +36,14 @@ export const ToggleDarkMode = () => {
       mediaQuery.removeEventListener('change', handleChange);
     };
   }, [themeMode]);
+
+  const handleThemeChange = (mode: 'system' | 'dark' | 'light') => {
+    setThemeMode(mode);
+    localStorage.setItem('themeMode', mode);
+    applyThemeMode(mode);
+    setMenuOpen(false);
+  };
+
   const buttonStyle = 'w-full text-left p-2 rounded hover:bg-neutral-200 dark:hover:bg-neutral-700';
   return (
     <div className="relative cursor-pointer transition-transform duration-200 ease-in-out">
@@ -50,41 +58,17 @@ export const ToggleDarkMode = () => {
         <div className="absolute top-10 right-0 min-w-32 rounded-md border border-neutral-100 bg-neutral-100 p-1 text-sm shadow-[0_3px_10px_rgb(0,0,0,0.2)] dark:border-neutral-500/20 dark:bg-neutral-500">
           <ul>
             <li>
-              <button
-                className={buttonStyle}
-                onClick={() => {
-                  setThemeMode('light');
-                  localStorage.setItem('themeMode', 'light');
-                  applyThemeMode('light');
-                  setMenuOpen(false);
-                }}
-              >
+              <button className={buttonStyle} onClick={() => handleThemeChange('light')}>
                 Light
               </button>
             </li>
             <li>
-              <button
-                className={buttonStyle}
-                onClick={() => {
-                  setThemeMode('dark');
-                  localStorage.setItem('themeMode', 'dark');
-                  applyThemeMode('dark');
-                  setMenuOpen(false);
-                }}
-              >
+              <button className={buttonStyle} onClick={() => handleThemeChange('dark')}>
                 Dark
               </button>
             </li>
             <li>
-              <button
-                className={buttonStyle}
-                onClick={() => {
-                  setThemeMode('system');
-                  localStorage.setItem('themeMode', 'system');
-                  applyThemeMode('system');
-                  setMenuOpen(false);
-                }}
-              >
+              <button className={buttonStyle} onClick={() => handleThemeChange('system')}>
                 System
               </button>
             </li>
