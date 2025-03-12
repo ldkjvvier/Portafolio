@@ -40,9 +40,8 @@ export const Experience = () => {
                 aria-label={`Período de trabajo: ${startDateFormatted} - ${endDateFormatted}`}
                 className="mb-3 block text-sm font-normal capitalize leading-none text-gray-800/90 dark:text-gray-300 lg:mb-5"
               >
-                <time dateTime={exp.startDate} className="after:content-['-']">
-                  {startDateFormatted}
-                </time>
+                <time dateTime={exp.startDate}>{startDateFormatted}</time>
+                <span className="mx-2">-</span>
                 <time dateTime={exp.endDate}>{endDateFormatted}</time>
               </p>
 
