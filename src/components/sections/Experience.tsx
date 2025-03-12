@@ -21,7 +21,7 @@ export const Experience = () => {
         const endDateFormatted = exp.isCurrent ? 'Presente' : formatDate(exp.endDate);
 
         return (
-          <article className="flex flex-col gap-5 lg:flex-row ml-6" key={index}>
+          <article className="flex flex-col gap-5 lg:flex-row ml-6 space-y-8" key={index}>
             <span className="absolute -start-[17px] flex size-8 items-center justify-center rounded-full text-yellow-400 text-5xl">
               &bull;
             </span>

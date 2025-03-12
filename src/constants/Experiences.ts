@@ -34,6 +34,7 @@ export const EXPERIENCES: Experience[] = [
     type: 'presencial',
     startDate: '2022-08-01',
     endDate: '2023-02-01',
+    isCurrent: false,
     description: [
       ' Experiencia en el ensamblaje y mantenimiento de computadoras, con un enfoque particular en la mejora continua del software.'
     ]
