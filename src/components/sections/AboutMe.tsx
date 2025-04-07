@@ -3,13 +3,13 @@ import { Notification } from '../Notification';
 import { useMemo, useState } from 'react';
 import Spline from '@splinetool/react-spline';
 import { Tooltip } from '../Tooltip';
-
+import { ABOUT_ME } from '@/constants/AboutMeData';
 export const AboutMe = () => {
-  const experience = useMemo(() => new Date().getFullYear() - 2022, []);
+  const experience = useMemo(() => new Date().getFullYear() - ABOUT_ME.experienceStartYear, []);
   const [showNotification, setShowNotification] = useState(false);
 
   const handleEmailCopy = (): void => {
-    const email = 'javier.a.mada@gmail.com';
+    const email = ABOUT_ME.links.email;
     navigator.clipboard
       .writeText(email)
       .then(() => {
@@ -26,20 +26,17 @@ export const AboutMe = () => {
       <div className="flex flex-col text-start md:w-full sm:w-12/12 md:m-5 sm:m-0 gap-3">
         <section>
           <h1 className="text-4xl font-bold bg-gradient-to-r from-blue-500 via-blue-400 to-cyan-500 bg-clip-text text-transparent pb-1 dark:drop-shadow-lg">
-            Javier Madariaga
+            {ABOUT_ME.name}
           </h1>
-          <h2 className="text-step-2 font-bold capitalize font-code text-black dark:text-gray-200">
-            FullStack Developer
-          </h2>
+          <h2 className="text-step-2 font-bold capitalize font-code text-black dark:text-gray-200">{ABOUT_ME.title}</h2>
           <p className="mt-2 animate-fade-up text-gray-700 dark:text-gray-300">
-            Analista Programador de Inacap con {experience} años de experiencia en el desarrollo de aplicaciones web y
-            móviles, con conocimientos en React, NodeJS, MongoDB, MySQL, Firebase, Git, entre otros.
+            {ABOUT_ME.description.replace('{experience}', experience.toString())}
           </p>
         </section>
 
         <section className="flex gap-3">
-          <ButtonTooltip text="Github" href="https://www.github.com/ldkjvvier" icon={<GithubIcon />} />
-          <ButtonTooltip text="LinkedIn" href="https://www.linkedin.com/in/javiermadariaga/" icon={<LinkedInIcon />} />
+          <ButtonTooltip text="Github" href={ABOUT_ME.links.github} icon={<GithubIcon />} />
+          <ButtonTooltip text="LinkedIn" href={ABOUT_ME.links.linkedin} icon={<LinkedInIcon />} />
 
           <ButtonTooltip text="Correo electrónico">
             <button className="block rounded-full p-1" onClick={handleEmailCopy} aria-label="Copiar correo">
@@ -47,11 +44,7 @@ export const AboutMe = () => {
             </button>
           </ButtonTooltip>
 
-          <ButtonTooltip
-            text="Visualizar CV"
-            href="https://drive.google.com/file/d/17oFnIEoHa-3AuWYAxN0y33tL_FlVoHGn/view"
-            icon={<CvIcon />}
-          />
+          <ButtonTooltip text="Visualizar CV" href={ABOUT_ME.links.cv} icon={<CvIcon />} />
         </section>
       </div>
 
