@@ -3,7 +3,7 @@ export const ABOUT_ME = {
   title: 'FullStack Developer',
   description:
     'Analista Programador de Inacap con {experience} años de experiencia en el desarrollo de aplicaciones web y móviles, con conocimientos en React, NodeJS, MongoDB, MySQL, Firebase, Git, entre otros.',
-  experienceStartYear: 2022,
+  experienceStartYear: 2023,
   links: {
     github: 'https://www.github.com/ldkjvvier',
     linkedin: 'https://www.linkedin.com/in/javiermadariaga/',
