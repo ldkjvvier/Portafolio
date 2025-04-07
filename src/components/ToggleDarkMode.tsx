@@ -48,7 +48,7 @@ export const ToggleDarkMode = () => {
   return (
     <div className="relative cursor-pointer transition-transform duration-200 ease-in-out flex items-center justify-center">
       <button
-        className="hover:scale-125 transition-all text-black dark:text-white dark:hover:text-blue-400"
+        className="hover:scale-125 transition-all text-theme-primary-light dark:text-theme-primary-dark hover:text-theme-hover-light dark:hover:text-theme-hover-dark"
         onClick={() => setMenuOpen((prev) => !prev)}
       >
         {themeMode === 'light' ? <SunIcon /> : themeMode === 'dark' ? <MoonIcon /> : <SystemIcon />}

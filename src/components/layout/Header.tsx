@@ -18,23 +18,20 @@ export const Header = () => {
   }, [isMobileMenuOpen]);
 
   return (
-    <header className="fixed top-0 z-50 w-screen px-4 py-4 mx-auto transition-all flex justify-center text-[0.9rem]">
-      <section className="header-section max-w-sm md:max-w-2xl flex items-center justify-center rounded-full px-6 py-2 text-black dark:text-white">
+    <header className="fixed top-0 z-50 w-screen px-4 py-4 mx-auto transition-all flex justify-center text-sm">
+      <section className="header-section max-w-sm md:max-w-2xl flex items-center justify-center rounded-full px-3 py-2 text-theme-primary-light dark:text-theme-primary-dark">
         {/* Desktop Nav */}
-        <nav className="flex items-center gap-6">
-          <ul className="flex gap-5 font-medium">
-            {filteredSections.map(({ id, title, label }) => (
-              <li key={id}>
-                <a
-                  href={`#${id}`}
-                  aria-label={title}
-                  className="cursor-pointer transition-colors duration-200 hover:text-gray-700 dark:hover:text-blue-300"
-                >
-                  {label ?? title}
-                </a>
-              </li>
-            ))}
-          </ul>
+        <nav className="flex items-center gap-[0.8rem] font-medium">
+          {filteredSections.map(({ id, title, label }) => (
+            <a
+              href={`#${id}`}
+              aria-label={title}
+              key={id}
+              className="cursor-pointer transition-colors duration-200 hover:text-theme-hover-light dark:hover:text-theme-hover-dark"
+            >
+              {label ?? title}
+            </a>
+          ))}
           <ToggleDarkMode />
         </nav>
       </section>
