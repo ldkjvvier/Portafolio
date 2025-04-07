@@ -26,7 +26,7 @@ export const Experience = () => {
               &bull;
             </span>
 
-            <header className="lg:w-2/5">
+            <section className="lg:w-2/5">
               <h3 className="mb-2 flex items-center text-xl font-bold text-gray-800/90 dark:text-gray-300">
                 {exp.title}
               </h3>
@@ -48,15 +48,15 @@ export const Experience = () => {
               <span className={`rounded px-2.5 py-0.5 text-sm font-medium capitalize ${typeClass[exp.type]}`}>
                 {exp.type}
               </span>
-            </header>
+            </section>
 
-            <div className="flex-1 space-y-5 text-gray-800/90 dark:text-gray-300">
+            <section className="flex-1 space-y-5 text-gray-800/90 dark:text-gray-300">
               {exp.description.map((line, index) => (
                 <p className="text-pretty text-base text-gray-800/90 dark:text-gray-300" key={index}>
                   {line}
                 </p>
               ))}
-            </div>
+            </section>
           </article>
         );
       })}
