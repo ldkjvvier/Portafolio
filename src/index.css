@@ -53,3 +53,60 @@ html {
   visibility: visible;
   z-index: 50;
 }
+
+
+@keyframes header-blur-scroll-light {
+  0% {
+    backdrop-filter: blur(0px);
+    background: transparent;
+  }
+
+  100% {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.5);
+    border-bottom-color: white;
+    -webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.35);
+    -moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.35);
+    box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.35);
+  }
+}
+
+@keyframes header-blur-scroll-dark {
+  0% {
+    backdrop-filter: blur(0px);
+    background: transparent;
+  }
+
+  100% {
+    backdrop-filter: blur(10px);
+    background: rgba(0, 0, 0, 0.5);
+    border-bottom-color: black;
+
+    -webkit-box-shadow:
+      0 4px 6px rgba(0, 0, 0, 0.6),
+      0 1px 10px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow:
+      0 4px 6px rgba(0, 0, 0, 0.6),
+      0 1px 10px rgba(0, 0, 0, 0.3);
+    box-shadow:
+      0 4px 6px rgba(0, 0, 0, 0.6),
+      0 1px 10px rgba(0, 0, 0, 0.3);
+  }
+}
+
+
+/* Aplica la animación según el tema */
+html:not(.dark) header section {
+  animation-name: header-blur-scroll-light;
+  animation-timeline: scroll();
+  animation-range: 0 250px;
+  animation-fill-mode: both;
+
+}
+
+html.dark header section {
+  animation-name: header-blur-scroll-dark;
+  animation-timeline: scroll();
+  animation-range: 0 250px;
+  animation-fill-mode: both;
+}

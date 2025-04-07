@@ -46,7 +46,7 @@ export const ToggleDarkMode = () => {
 
   const buttonStyle = 'w-full text-left p-2 rounded hover:bg-neutral-200 dark:hover:bg-neutral-700';
   return (
-    <div className="relative cursor-pointer transition-transform duration-200 ease-in-out">
+    <div className="relative cursor-pointer transition-transform duration-200 ease-in-out flex items-center justify-center">
       <button
         className="hover:scale-125 transition-all text-black dark:text-white dark:hover:text-blue-400"
         onClick={() => setMenuOpen((prev) => !prev)}
