@@ -11,7 +11,7 @@ export const Inspiration = () => {
           mundo de la informática.
         </p>
       </div>
-      <div className="grid grid-cols-5 place-items-center sm:grid-cols-5  w-[55%] mt-8">
+      <div className="grid grid-cols-5 place-items-center sm:grid-cols-5 w-[65%] md:w-[45%] mt-8">
         {INSPIRATIONS.map((inspiration) => (
           <a
             className="z-50 w-16 h-16 rounded-full cursor-pointer border-4 overflow-hidden border-slate-500/20 sm:border-white/10"
