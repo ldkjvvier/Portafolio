@@ -51,9 +51,9 @@ export const AboutMe = () => {
       <div className="hidden sm:block">
         <div className="h-[600px] w-[544px]">
           <Spline
-            scene="https://prod.spline.design/Evj8fK2J5nOkiW9l/scene.splinecode"
+            scene={ABOUT_ME.splineScene}
             aria-label="Animación 3D interactiva"
-            title="Modelo 3D de Javier Madariaga"
+            title={'Animación 3D interactiva'}
           />
         </div>
       </div>
