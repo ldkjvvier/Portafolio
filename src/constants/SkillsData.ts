@@ -1,88 +1,105 @@
 interface Skill {
   icon: string;
   title: string;
-  color: string;
+  lightBackground: string;
+  darkBackground: string;
 }
 
 export const SKILLS: Skill[] = [
   {
     icon: '/Portafolio/abilities/html.png',
     title: 'HTML5',
-    color: 'bg-orange-500' // Color que coincide con el color del logotipo de HTML5
+    lightBackground: 'bg-orange-500/20',
+    darkBackground: 'dark:bg-orange-500/30'
   },
   {
     icon: '/Portafolio/abilities/css.png',
     title: 'CSS3',
-    color: 'bg-blue-500' // Un color azul que refleja el logo de CSS
+    lightBackground: 'bg-blue-500/20',
+    darkBackground: 'dark:bg-blue-500/30'
   },
   {
     icon: '/Portafolio/abilities/js.png',
     title: 'JavaScript',
-    color: 'bg-yellow-500' // Color que se relaciona con el logo de JavaScript
+    lightBackground: 'bg-yellow-500/10',
+    darkBackground: 'dark:bg-yellow-500/30'
   },
   {
     icon: '/Portafolio/abilities/react.png',
     title: 'React',
-    color: 'bg-blue-600' // Azul más oscuro para el logo de React
+    lightBackground: 'bg-blue-600/20',
+    darkBackground: 'dark:bg-blue-600/30'
   },
   {
     icon: '/Portafolio/abilities/nodejs.png',
     title: 'NodeJS',
-    color: 'bg-green-600' // Color que representa el logo de NodeJS
+    lightBackground: 'bg-green-600/20',
+    darkBackground: 'dark:bg-green-600/30'
   },
   {
     icon: '/Portafolio/abilities/mongodb.png',
     title: 'MongoDB',
-    color: 'bg-green-500' // Un verde que se asocia con MongoDB
+    lightBackground: 'bg-green-500/20',
+    darkBackground: 'dark:bg-green-500/30'
   },
   {
     icon: '/Portafolio/abilities/mysql.png',
     title: 'MySQL',
-    color: 'bg-blue-600' // Un azul más oscuro que el de MySQL
+    lightBackground: 'bg-blue-600/20',
+    darkBackground: 'dark:bg-blue-600/30'
   },
   {
     icon: '/Portafolio/abilities/firebase.png',
     title: 'Firebase',
-    color: 'bg-orange-500' // Color que se asemeja al logo de Firebase
+    lightBackground: 'bg-orange-500/20',
+    darkBackground: 'dark:bg-orange-500/30'
   },
   {
     icon: '/Portafolio/abilities/tailwind.png',
     title: 'TailwindCSS',
-    color: 'bg-cyan-500' // Color que corresponde al logo de TailwindCSS
+    lightBackground: 'bg-cyan-500/20',
+    darkBackground: 'dark:bg-cyan-500/30'
   },
   {
     icon: '/Portafolio/abilities/bootstrap.png',
     title: 'Bootstrap',
-    color: 'bg-purple-700' // Un púrpura oscuro que se relaciona con Bootstrap
+    lightBackground: 'bg-purple-700/20',
+    darkBackground: 'dark:bg-purple-700/30'
   },
   {
     icon: '/Portafolio/abilities/redux.png',
     title: 'Redux',
-    color: 'bg-purple-600' // Color púrpura más claro para Redux
+    lightBackground: 'bg-purple-600/20',
+    darkBackground: 'dark:bg-purple-600/30'
   },
   {
     icon: '/Portafolio/abilities/git.png',
     title: 'Git',
-    color: 'bg-red-500' // Rojo que se asocia con el logo de Git
+    lightBackground: 'bg-red-500/20',
+    darkBackground: 'dark:bg-red-500/30'
   },
   {
     icon: '/Portafolio/abilities/Typescript.png',
     title: 'TypeScript',
-    color: 'bg-blue-600' // Azul oscuro para TypeScript
+    lightBackground: 'bg-blue-600/20',
+    darkBackground: 'dark:bg-blue-600/30'
   },
   {
     icon: '/Portafolio/abilities/Python.png',
     title: 'Python',
-    color: 'bg-blue-700' // Azul oscuro que complementa el logo de Python
+    lightBackground: 'bg-blue-700/20',
+    darkBackground: 'dark:bg-blue-700/30'
   },
   {
-    icon: '/Portafolio/abilities/aws-lambda.png', // Asegúrate de tener el icono adecuado para AWS Lambda
+    icon: '/Portafolio/abilities/aws-lambda.png',
     title: 'AWS Lambda',
-    color: 'bg-orange-600' // Naranja que representa el logo de AWS Lambda
+    lightBackground: 'bg-orange-600/20',
+    darkBackground: 'dark:bg-orange-600/30'
   },
   {
     icon: '/Portafolio/abilities/nextjs.svg',
     title: 'NextJS',
-    color: ' bg-black'
+    lightBackground: 'bg-black/20',
+    darkBackground: 'dark:bg-black/30'
   }
 ];

@@ -7,7 +7,7 @@ export const Skills = () => {
           <span className="w-[72px]" key={index}>
             <div className="transition hover:scale-110" aria-label={`skill icon ${skill.title}`}>
               <div
-                className={`${skill.color} bg-opacity-20 dark:bg-opacity-30 rounded-lg p-3 cursor-pointer flex items-center justify-center`}
+                className={`${skill.lightBackground} ${skill.darkBackground} rounded-lg p-3 cursor-pointer flex items-center justify-center`}
               >
                 <img
                   src={skill.icon}
