@@ -12,7 +12,7 @@ interface PageSection {
 export const PAGE_SECTIONS: PageSection[] = [
   {
     id: 'about',
-    title: 'Sobre mi',
+    title: 'Sobre mí',
     component: AboutMe
   },
   {
