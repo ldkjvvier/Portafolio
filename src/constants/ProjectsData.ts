@@ -5,8 +5,6 @@ interface Project {
   img: string;
   web: string;
   github: string;
-  imgPosition: ['md:col-start-1', 'md:col-start-2'] | ['md:col-start-2', 'md:col-start-1'];
-  position: 'left' | 'right';
 }
 
 export const PROJECTS: Project[] = [
@@ -17,9 +15,7 @@ export const PROJECTS: Project[] = [
       'Juego clásico de Tic Tac Toe desarrollado en React/Vite, donde podrás competir contra la maquina o personas en la misma computadora.',
     img: '/Portafolio/Images/projects/TicTacToe.webp',
     web: 'https://tic-tac-toe-idkjvviers-projects.vercel.app',
-    github: 'https://github.com/ldkjvvier/Tic-Tac-Toe',
-    imgPosition: ['md:col-start-1', 'md:col-start-2'],
-    position: 'left'
+    github: 'https://github.com/ldkjvvier/Tic-Tac-Toe'
   },
   {
     title: 'Pokedex - 2024',
@@ -27,9 +23,7 @@ export const PROJECTS: Project[] = [
     description: 'Clon de Pokedex hecho en React/Vite que permite buscar Pokemones y ver los detalles de cada uno.',
     img: '/Portafolio/Images/projects/Pokedex.webp',
     web: 'https://pokedex-flame-zeta.vercel.app',
-    github: 'https://github.com/ldkjvvier/Pokedex',
-    imgPosition: ['md:col-start-2', 'md:col-start-1'],
-    position: 'right'
+    github: 'https://github.com/ldkjvvier/Pokedex'
   },
   {
     title: 'CineVerse - 2024',
@@ -38,8 +32,6 @@ export const PROJECTS: Project[] = [
       'Plataforma web desarrollada con Next.js que permite a los usuarios descubrir, buscar y explorar una amplia colección de películas. Ofrece información detallada como sinopsis, valoraciones y géneros.',
     img: '/Portafolio/Images/projects/CineVerse.webp',
     web: 'https://movies-client-next.vercel.app/browse',
-    github: 'https://github.com/ldkjvvier/Movies-client-next',
-    imgPosition: ['md:col-start-1', 'md:col-start-2'],
-    position: 'left'
+    github: 'https://github.com/ldkjvvier/Movies-client-next'
   }
 ];

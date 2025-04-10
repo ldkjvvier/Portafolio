@@ -1,15 +1,16 @@
 import { PROJECTS } from '@/constants/ProjectsData';
 
-export const Projects = () => {
-  return (
-    <ul className="grid grid-rows-2 gap-8">
-      {PROJECTS.map(({ id, web, img, title, imgPosition, position, description, github }) => (
+export const Projects = () => (
+  <ul className="grid grid-rows-2 gap-8">
+    {PROJECTS.map(({ id, web, img, title, description, github }, i) => {
+      const isEven = i % 2 === 0;
+      const [imagePosition, textPosition] = isEven
+        ? ['md:col-start-1', 'md:col-start-2']
+        : ['md:col-start-2', 'md:col-start-1'];
+      const imageAlign = isEven ? 'md:justify-start' : 'md:justify-end';
+      return (
         <li key={id} className="group grid md:grid-cols-2 rounded-lg gap-2 space-y-2 py-12">
-          <picture
-            className={`w-full flex justify-center sm:justify-center ${
-              position !== 'left' ? 'md:justify-end' : 'md:justify-start'
-            }`}
-          >
+          <picture className={`w-full flex justify-center sm:justify-center ${imagePosition} ${imageAlign}`}>
             <a href={web} target="_blank" rel="noreferrer">
               <img
                 src={img}
@@ -19,7 +20,7 @@ export const Projects = () => {
             </a>
           </picture>
           <div
-            className={`${imgPosition[1]} md:row-start-1 flex flex-col justify-center p-3 text-gray-800/90 dark:text-gray-300`}
+            className={`${textPosition} md:row-start-1 flex flex-col justify-center p-3 text-gray-800/90 dark:text-gray-300`}
           >
             <p className="text-xl md:text-2xl font-extrabold text-pretty">{description}</p>
             <footer className="mt-2">
@@ -55,7 +56,7 @@ export const Projects = () => {
             </footer>
           </div>
         </li>
-      ))}
-    </ul>
-  );
-};
+      );
+    })}
+  </ul>
+);
