@@ -21,7 +21,7 @@ export const Header = () => {
     <header className="fixed top-0 z-50 w-screen px-4 py-4 mx-auto transition-all flex justify-center text-sm">
       <section className="header-section max-w-sm md:max-w-2xl flex items-center justify-center rounded-full px-3 py-2 text-theme-primary-light dark:text-theme-primary-dark">
         {/* Desktop Nav */}
-        <nav className="flex items-center gap-[0.8rem] font-medium">
+        <nav className="flex items-center gap-1 sm:gap-3 md:gap-4 lg:gap-5 xl:gap-6 font-medium">
           {filteredSections.map(({ id, title, label }) => (
             <a
               href={`#${id}`}
