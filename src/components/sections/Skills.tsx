@@ -1,5 +1,5 @@
 import { SKILLS } from '@/constants/SkillsData';
-
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 export const Skills = () => {
   return (
     <div className="grid grid-cols-4 md:grid-cols-8 grid-rows-5 gap-y-6 place-items-center">
@@ -9,10 +9,9 @@ export const Skills = () => {
             className={`${skill.lightBackground} ${skill.darkBackground} rounded-lg p-3 transition-transform duration-200 group-hover:scale-110 cursor-pointer flex items-center justify-center`}
             aria-label={`Skill icon: ${skill.title}`}
           >
-            <img
+            <LazyLoadImage
               src={`/Portafolio/abilities/${skill.name}.png`}
               alt={`${skill.title} logo`}
-              loading="lazy"
               className="w-12 h-12 select-none pointer-events-none"
               draggable={false}
             />
