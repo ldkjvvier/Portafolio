@@ -1,5 +1,5 @@
 interface Skill {
-  icon: string;
+  name: string;
   title: string;
   lightBackground: string;
   darkBackground: string;
@@ -7,97 +7,97 @@ interface Skill {
 
 export const SKILLS: Skill[] = [
   {
-    icon: '/Portafolio/abilities/html.png',
+    name: 'html',
     title: 'HTML5',
     lightBackground: 'bg-orange-500/20',
     darkBackground: 'dark:bg-orange-500/30'
   },
   {
-    icon: '/Portafolio/abilities/css.png',
+    name: 'css',
     title: 'CSS3',
     lightBackground: 'bg-blue-500/20',
     darkBackground: 'dark:bg-blue-500/30'
   },
   {
-    icon: '/Portafolio/abilities/js.png',
+    name: 'js',
     title: 'JavaScript',
     lightBackground: 'bg-yellow-500/10',
     darkBackground: 'dark:bg-yellow-500/30'
   },
   {
-    icon: '/Portafolio/abilities/react.png',
+    name: 'react',
     title: 'React',
     lightBackground: 'bg-blue-600/20',
     darkBackground: 'dark:bg-blue-600/30'
   },
   {
-    icon: '/Portafolio/abilities/nodejs.png',
+    name: 'nodejs',
     title: 'NodeJS',
     lightBackground: 'bg-green-600/20',
     darkBackground: 'dark:bg-green-600/30'
   },
   {
-    icon: '/Portafolio/abilities/mongodb.png',
+    name: 'mongodb',
     title: 'MongoDB',
     lightBackground: 'bg-green-500/20',
     darkBackground: 'dark:bg-green-500/30'
   },
   {
-    icon: '/Portafolio/abilities/mysql.png',
+    name: 'mysql',
     title: 'MySQL',
     lightBackground: 'bg-blue-600/20',
     darkBackground: 'dark:bg-blue-600/30'
   },
   {
-    icon: '/Portafolio/abilities/firebase.png',
+    name: 'firebase',
     title: 'Firebase',
     lightBackground: 'bg-orange-500/20',
     darkBackground: 'dark:bg-orange-500/30'
   },
   {
-    icon: '/Portafolio/abilities/tailwind.png',
+    name: 'tailwind',
     title: 'TailwindCSS',
     lightBackground: 'bg-cyan-500/20',
     darkBackground: 'dark:bg-cyan-500/30'
   },
   {
-    icon: '/Portafolio/abilities/bootstrap.png',
+    name: 'bootstrap',
     title: 'Bootstrap',
     lightBackground: 'bg-purple-700/20',
     darkBackground: 'dark:bg-purple-700/30'
   },
   {
-    icon: '/Portafolio/abilities/redux.png',
+    name: 'redux',
     title: 'Redux',
     lightBackground: 'bg-purple-600/20',
     darkBackground: 'dark:bg-purple-600/30'
   },
   {
-    icon: '/Portafolio/abilities/git.png',
+    name: 'git',
     title: 'Git',
     lightBackground: 'bg-red-500/20',
     darkBackground: 'dark:bg-red-500/30'
   },
   {
-    icon: '/Portafolio/abilities/Typescript.png',
+    name: 'Typescript',
     title: 'TypeScript',
     lightBackground: 'bg-blue-600/20',
     darkBackground: 'dark:bg-blue-600/30'
   },
   {
-    icon: '/Portafolio/abilities/Python.png',
+    name: 'Python',
     title: 'Python',
     lightBackground: 'bg-blue-700/20',
     darkBackground: 'dark:bg-blue-700/30'
   },
   {
-    icon: '/Portafolio/abilities/aws-lambda.png',
+    name: 'aws-lambda',
     title: 'AWS Lambda',
     lightBackground: 'bg-orange-600/20',
     darkBackground: 'dark:bg-orange-600/30'
   },
   {
-    icon: '/Portafolio/abilities/nextjs.svg',
+    name: 'nextjs',
     title: 'NextJS',
     lightBackground: 'bg-black/20',
     darkBackground: 'dark:bg-black/30'
