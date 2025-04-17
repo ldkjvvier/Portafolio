@@ -1,15 +1,25 @@
+import { Suspense, useMemo, useState } from 'react';
 import { GithubIcon, LinkedInIcon, EmailIcon, CvIcon } from '../Icons/Icons';
 import { Notification } from '../Notification';
-import { useMemo, useState } from 'react';
-import Spline from '@splinetool/react-spline';
 import { Tooltip } from '../Tooltip';
 import { ABOUT_ME } from '@/constants/AboutMeData';
-export const AboutMe = () => {
+import React from 'react';
+
+// 🔥 Importación dinámica real de Spline
+const SplineComponent = React.lazy(() => import('../Animation'));
+
+const AboutMe = () => {
   const experience = useMemo(() => new Date().getFullYear() - ABOUT_ME.experienceStartYear, []);
   const [showNotification, setShowNotification] = useState(false);
 
   const handleEmailCopy = (): void => {
     const email = ABOUT_ME.links.email;
+
+    if (!navigator.clipboard) {
+      console.warn('Clipboard API no soportada');
+      return;
+    }
+
     navigator.clipboard
       .writeText(email)
       .then(() => {
@@ -48,18 +58,15 @@ export const AboutMe = () => {
         </section>
       </div>
 
-      <div className="hidden sm:block">
-        <div className="h-[600px] w-[544px]">
-          <Spline
-            scene={ABOUT_ME.splineScene}
-            aria-label="Animación 3D interactiva"
-            title={'Animación 3D interactiva'}
-          />
-        </div>
-      </div>
+      {/* Suspense envuelve la carga dinámica del componente pesado */}
+      <Suspense fallback={<div className="w-full text-center text-gray-400">Cargando animación...</div>}>
+        <SplineComponent url={ABOUT_ME.splineScene} />
+      </Suspense>
     </section>
   );
 };
+
+export default AboutMe;
 
 interface ButtonTooltipProps {
   text: string;

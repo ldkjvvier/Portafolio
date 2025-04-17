@@ -1,6 +1,6 @@
 import { SKILLS } from '@/constants/SkillsData';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
-export const Skills = () => {
+const Skills = () => {
   return (
     <div className="grid grid-cols-4 md:grid-cols-8 grid-rows-5 gap-y-6 place-items-center">
       {SKILLS.map((skill) => (
@@ -24,3 +24,5 @@ export const Skills = () => {
     </div>
   );
 };
+
+export default Skills;

@@ -1,41 +1,62 @@
-import { Skills, Projects, AboutMe, Inspiration, Experience } from '@/components/sections';
+import { lazy } from 'react';
 import { AbilitiesIcon, ProjectsIcon, ExperienceIcon } from '@/components/Icons/Icons';
 
+const AboutMe = lazy(() => import('@/components/sections/AboutMe'));
+const Experience = lazy(() => import('@/components/sections/Experience'));
+const Skills = lazy(() => import('@/components/sections/Skills'));
+const Projects = lazy(() => import('@/components/sections/Projects'));
+const Inspiration = lazy(() => import('@/components/sections/Inspiration'));
+
+import { JSX } from 'react';
+
+export enum SectionId {
+  About = 'about',
+  Experience = 'experience',
+  Skills = 'skills',
+  Projects = 'projects',
+  Inspiration = 'inspiration'
+}
+
+import { LazyExoticComponent } from 'react';
+
+type ComponentType = LazyExoticComponent<() => JSX.Element>;
+type IconType = () => JSX.Element;
+
 interface PageSection {
-  id: string;
+  id: SectionId;
   title: string;
   label?: string;
-  component: React.FC;
-  icon?: React.FC;
+  component: ComponentType;
+  icon?: IconType;
 }
 
 export const PAGE_SECTIONS: PageSection[] = [
   {
-    id: 'about',
+    id: SectionId.About,
     title: 'Sobre mí',
     component: AboutMe
   },
   {
-    id: 'experience',
+    id: SectionId.Experience,
     title: 'Experiencia laboral',
     label: 'Experiencia',
-    component: Experience,
-    icon: ExperienceIcon
+    icon: ExperienceIcon,
+    component: Experience
   },
   {
-    id: 'skills',
+    id: SectionId.Skills,
     title: 'Habilidades',
-    component: Skills,
-    icon: AbilitiesIcon
+    icon: AbilitiesIcon,
+    component: Skills
   },
   {
-    id: 'projects',
+    id: SectionId.Projects,
     title: 'Proyectos',
-    component: Projects,
-    icon: ProjectsIcon
+    icon: ProjectsIcon,
+    component: Projects
   },
   {
-    id: 'inspiration',
+    id: SectionId.Inspiration,
     title: 'Inspiración',
     component: Inspiration
   }

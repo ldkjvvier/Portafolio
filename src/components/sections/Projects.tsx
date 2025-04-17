@@ -1,6 +1,6 @@
 import { PROJECTS } from '@/constants/ProjectsData';
 
-export const Projects = () => (
+const Projects = () => (
   <ul className="flex flex-col gap-12">
     {PROJECTS.map(({ id, web, img, title, description, github }, i) => {
       const isEven = i % 2 === 0;
@@ -60,3 +60,5 @@ export const Projects = () => (
     })}
   </ul>
 );
+
+export default Projects;

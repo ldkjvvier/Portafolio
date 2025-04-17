@@ -1,6 +1,6 @@
 import { INSPIRATIONS } from '@/constants/Inspirations';
 
-export const Inspiration = () => {
+const Inspiration = () => {
   return (
     <div className="grid place-items-center border border-slate-600 rounded-lg px-4 py-6 sm:px-8 sm:py-10 my-32">
       <div className="grid grid-rows-2 place-items-center text-center">
@@ -28,3 +28,5 @@ export const Inspiration = () => {
     </div>
   );
 };
+
+export default Inspiration;

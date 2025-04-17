@@ -13,7 +13,7 @@ const typeClass = {
   híbrido: 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300'
 };
 
-export const Experience = () => {
+const Experience = () => {
   return (
     <ol className="relative mx-3.5 mt-16 border-s-2 border-gray-200 dark:border-gray-700">
       {EXPERIENCES.map((exp, index) => {
@@ -63,3 +63,5 @@ export const Experience = () => {
     </ol>
   );
 };
+
+export default Experience;
