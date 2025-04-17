@@ -9,5 +9,15 @@ export default defineConfig({
     alias: [{ find: '@', replacement: path.resolve(__dirname, 'src') }],
     extensions: ['.js', '.jsx', '.ts', '.tsx']
   },
-  base: 'https://ldkjvvier.github.io/Portafolio'
+  base: 'https://ldkjvvier.github.io/Portafolio',
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          spline: ['@splinetool/runtime'],
+          react: ['react', 'react-dom']
+        }
+      }
+    }
+  }
 });
