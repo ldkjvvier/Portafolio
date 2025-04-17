@@ -4,6 +4,8 @@ import { Notification } from '../Notification';
 import { Tooltip } from '../Tooltip';
 import { ABOUT_ME } from '@/constants/AboutMeData';
 import React from 'react';
+import { useInView } from 'react-intersection-observer';
+import { Loading } from '../Loading';
 
 // 🔥 Importación dinámica real de Spline
 const SplineComponent = React.lazy(() => import('../Animation'));
@@ -11,7 +13,10 @@ const SplineComponent = React.lazy(() => import('../Animation'));
 const AboutMe = () => {
   const experience = useMemo(() => new Date().getFullYear() - ABOUT_ME.experienceStartYear, []);
   const [showNotification, setShowNotification] = useState(false);
-
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1
+  });
   const handleEmailCopy = (): void => {
     const email = ABOUT_ME.links.email;
 
@@ -59,9 +64,13 @@ const AboutMe = () => {
       </div>
 
       {/* Suspense envuelve la carga dinámica del componente pesado */}
-      <Suspense fallback={<div className="w-full text-center text-gray-400">Cargando animación...</div>}>
-        <SplineComponent url={ABOUT_ME.splineScene} />
-      </Suspense>
+      <div ref={ref}>
+        {inView && (
+          <Suspense fallback={<Loading />}>
+            <SplineComponent url={ABOUT_ME.splineScene} />
+          </Suspense>
+        )}
+      </div>
     </section>
   );
 };
