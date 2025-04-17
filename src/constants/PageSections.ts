@@ -1,12 +1,9 @@
-import { lazy } from 'react';
 import { AbilitiesIcon, ProjectsIcon, ExperienceIcon } from '@/components/Icons/Icons';
-
-const AboutMe = lazy(() => import('@/components/sections/AboutMe'));
-const Experience = lazy(() => import('@/components/sections/Experience'));
-const Skills = lazy(() => import('@/components/sections/Skills'));
-const Projects = lazy(() => import('@/components/sections/Projects'));
-const Inspiration = lazy(() => import('@/components/sections/Inspiration'));
-
+import AboutMe from '@/components/sections/AboutMe';
+import Experience from '@/components/sections/Experience';
+import Skills from '@/components/sections/Skills';
+import Projects from '@/components/sections/Projects';
+import Inspiration from '@/components/sections/Inspiration';
 import { JSX } from 'react';
 
 export enum SectionId {
@@ -17,9 +14,7 @@ export enum SectionId {
   Inspiration = 'inspiration'
 }
 
-import { LazyExoticComponent } from 'react';
-
-type ComponentType = LazyExoticComponent<() => JSX.Element>;
+type ComponentType = () => JSX.Element;
 type IconType = () => JSX.Element;
 
 interface PageSection {

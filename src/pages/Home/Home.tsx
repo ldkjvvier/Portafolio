@@ -2,7 +2,6 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { PAGE_SECTIONS } from '@/constants/PageSections';
 import { CustomTitle } from '@/components/CustomTitle';
-import { Suspense } from 'react';
 
 export const Home = () => {
   return (
@@ -30,9 +29,7 @@ export const Home = () => {
             <section key={section.id} id={section.id} className="scroll-mt-24 md:scroll-mt-26">
               {Icon && <CustomTitle title={section.title} icon={<Icon />} />}
 
-              <Suspense fallback={<div className="text-center text-gray-400">Cargando sección...</div>}>
-                <Component />
-              </Suspense>
+              <Component />
             </section>
           );
         })}
