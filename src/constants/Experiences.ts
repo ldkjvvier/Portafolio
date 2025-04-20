@@ -13,6 +13,23 @@ interface Experience {
 
 export const EXPERIENCES: Experience[] = [
   {
+    title: 'Desarrollador Fullstack',
+    company: 'Freelance',
+    companyUrl: '',
+    type: 'remoto',
+    startDate: '2024-10-01',
+    endDate: '',
+    isCurrent: true,
+    description: [
+      '• Desarrollo de aplicaciones Frontend y Backend como freelancer, utilizando tecnologías modernas como TypeScript, Node.js, Express, MongoDB, Next.js, MUI, Tailwind CSS y Express Session.',
+      '• Construcción y consumo de API REST, con pruebas realizadas en Postman para asegurar la funcionalidad y consistencia de los endpoints.',
+      '• Manejo del control de versiones con Git para mantener un ujo de trabajo colaborativo y controlado.',
+      '• Diseño e implementación de interfaces accesibles y responsivas, integrando MUI y Tailwind para una experiencia de usuario moderna.',
+      '• Gestión de autenticación y sesiones utilizando Express Session, enfocándome en la seguridad y escalabilidad de las aplicaciones.',
+      '• Participación en el ciclo completo de desarrollo, incluyendo despliegue en entornos de desarrollo y pruebas.'
+    ]
+  },
+  {
     title: 'Practicante de Desarrollo de Software',
     company: 'Principal Financial Group',
     companyUrl: 'https://www.principal.cl',
