@@ -8,7 +8,7 @@ export const ABOUT_ME = {
     github: 'https://www.github.com/ldkjvvier',
     linkedin: 'https://www.linkedin.com/in/javiermadariaga/',
     email: 'javier.a.mada@gmail.com',
-    cv: 'https://drive.google.com/file/d/17oFnIEoHa-3AuWYAxN0y33tL_FlVoHGn/view'
+    cv: 'https://drive.google.com/file/d/1_NDtRly2qR1P7ppGtkcO0_PBVN2BWx_A/view'
   },
   splineScene: 'https://prod.spline.design/Evj8fK2J5nOkiW9l/scene.splinecode'
 };
