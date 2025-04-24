@@ -9,7 +9,7 @@ interface Project {
 
 export const PROJECTS: Project[] = [
   {
-    title: 'Tic Tac Toe - 2024',
+    title: 'TicTacToe - 2024',
     id: 1,
     description:
       'Juego clásico de Tic Tac Toe desarrollado en React/Vite, donde podrás competir contra la maquina o personas en la misma computadora.',
