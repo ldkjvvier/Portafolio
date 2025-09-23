@@ -1,7 +1,10 @@
+import type { ReactNode } from 'react';
+
 interface TooltipProps {
-  children: React.ReactNode;
+  children: ReactNode;
   text: string;
 }
+
 export const Tooltip = ({ children, text }: TooltipProps) => {
   return (
     <div className="has-tooltip">

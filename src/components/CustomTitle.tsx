@@ -1,6 +1,8 @@
+import type { ReactNode } from 'react';
+
 interface CustomTitleProps {
   title: string;
-  icon: React.ReactNode;
+  icon: ReactNode;
 }
 
 export const CustomTitle = ({ title, icon }: CustomTitleProps) => {

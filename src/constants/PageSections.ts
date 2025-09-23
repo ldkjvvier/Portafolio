@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { AbilitiesIcon, ProjectsIcon, ExperienceIcon } from '@/components/Icons/Icons';
 import AboutMe from '@/components/sections/AboutMe';
 import Experience from '@/components/sections/Experience';
