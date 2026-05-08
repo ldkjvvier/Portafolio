@@ -13,9 +13,14 @@ export default defineConfig({
   build: {
     rollupOptions: {
       output: {
-        manualChunks: {
-          spline: ['@splinetool/runtime'],
-          react: ['react', 'react-dom']
+        manualChunks(id) {
+          if (id.includes('@splinetool/runtime')) {
+            return 'spline';
+          }
+
+          if (id.includes('node_modules/react/') || id.includes('node_modules/react-dom/')) {
+            return 'react';
+          }
         }
       }
     }
