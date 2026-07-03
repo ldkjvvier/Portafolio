@@ -3,7 +3,6 @@
   "private": true,
   "version": "0.1.0",
   "type": "module",
-  "module": "commonjs",
   "scripts": {
     "dev": "vite",
     "build": "npm run lint && tsc && vite build",
@@ -14,11 +13,8 @@
   },
   "dependencies": {
     "@fontsource-variable/onest": "^5.2.11",
-    "@splinetool/react-spline": "^4.1.0",
-    "@splinetool/runtime": "^1.12.92",
     "react": "^19.2.6",
-    "react-dom": "^19.2.6",
-    "react-intersection-observer": "^10.0.3"
+    "react-dom": "^19.2.6"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
@@ -29,7 +25,7 @@
     "@types/react-dom": "^19.2.3",
     "@typescript-eslint/eslint-plugin": "^8.59.2",
     "@typescript-eslint/parser": "^8.59.2",
-    "@vitejs/plugin-react-swc": "^4.3.0",
+    "@vitejs/plugin-react": "^5.1.0",
     "autoprefixer": "^10.5.0",
     "eslint": "^10.3.0",
     "eslint-plugin-react-hooks": "^7.1.1",
