@@ -1,30 +1,47 @@
-import { SKILLS } from '@/constants/SkillsData';
+import { SKILLS, SKILL_GROUPS } from '@/constants/SkillsData';
+import { withBase } from '@/lib/assets';
 
-const Skills = () => {
-  return (
-    <div className="grid grid-cols-4 md:grid-cols-8 grid-rows-5 gap-y-6 place-items-center">
+const Skills = () => (
+  <div>
+    <ul className="grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-8" aria-label="Stack principal">
       {SKILLS.map((skill) => (
-        <div key={skill.name} className="w-[72px] text-center group" role="listitem">
-          <div
-            className={`${skill.lightBackground} ${skill.darkBackground} rounded-lg p-3 transition-transform duration-200 group-hover:scale-110 cursor-pointer flex items-center justify-center`}
-            aria-label={`Skill icon: ${skill.title}`}
-          >
-            <img
-              src={`/Portafolio/abilities/${skill.name}.png`}
-              alt={`${skill.title} logo`}
-              className="w-12 h-12 select-none pointer-events-none"
-              draggable={false}
-              loading="lazy"
-              decoding="async"
-            />
-          </div>
-          <h3 className="text-sm font-semibold text-black dark:text-gray-300 mt-2 truncate" title={skill.title}>
-            {skill.title}
-          </h3>
-        </div>
+        <li
+          key={skill.title}
+          className="card flex flex-col items-center gap-2.5 px-3 py-4 text-center transition-colors hover:border-line-strong"
+        >
+          <img
+            src={withBase(skill.icon)}
+            alt=""
+            width={40}
+            height={40}
+            className="size-10 select-none object-contain"
+            draggable={false}
+            loading="lazy"
+            decoding="async"
+          />
+          <span className="text-xs font-medium text-ink-muted">{skill.title}</span>
+        </li>
+      ))}
+    </ul>
+
+    <div className="mt-12 grid gap-x-10 gap-y-8 sm:grid-cols-2">
+      {SKILL_GROUPS.map((group) => (
+        <section key={group.title} aria-label={group.title}>
+          <h3 className="text-sm font-semibold text-ink">{group.title}</h3>
+          <ul className="mt-3 flex flex-wrap gap-2">
+            {group.skills.map((skill) => (
+              <li
+                key={skill}
+                className="rounded-full border border-line px-2.5 py-0.5 text-xs font-medium text-ink-muted"
+              >
+                {skill}
+              </li>
+            ))}
+          </ul>
+        </section>
       ))}
     </div>
-  );
-};
+  </div>
+);
 
 export default Skills;

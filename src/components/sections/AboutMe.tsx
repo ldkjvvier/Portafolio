@@ -1,99 +1,68 @@
-import { Suspense, useMemo, useState } from 'react';
-import { GithubIcon, LinkedInIcon, EmailIcon, CvIcon } from '../Icons/Icons';
-import { Notification } from '../Notification';
-import { Tooltip } from '../Tooltip';
+import { FileIcon, GithubIcon, LinkedInIcon, MailIcon } from '@/components/Icons/Icons';
 import { ABOUT_ME } from '@/constants/AboutMeData';
-import React from 'react';
-import { useInView } from 'react-intersection-observer';
-import { Loading } from '../Loading';
+import { openCvViewer } from '@/hooks/useCvViewer';
+import { showToast } from '@/hooks/useToast';
+import { copyText } from '@/lib/clipboard';
 
-// 🔥 Importación dinámica real de Spline
-const SplineComponent = React.lazy(() => import('../Animation'));
+const SOCIAL_LINKS = [
+  { label: 'GitHub', href: ABOUT_ME.links.github, icon: GithubIcon },
+  { label: 'LinkedIn', href: ABOUT_ME.links.linkedin, icon: LinkedInIcon }
+] as const;
 
 const AboutMe = () => {
-  const experience = useMemo(() => new Date().getFullYear() - ABOUT_ME.experienceStartYear, []);
-  const [showNotification, setShowNotification] = useState(false);
-  const { ref, inView } = useInView({
-    triggerOnce: true,
-    threshold: 0.1
-  });
-  const handleEmailCopy = (): void => {
-    const email = ABOUT_ME.links.email;
+  const experienceYears = new Date().getFullYear() - ABOUT_ME.experienceStartYear;
 
-    if (!navigator.clipboard) {
-      console.warn('Clipboard API no soportada');
-      return;
-    }
-
-    navigator.clipboard
-      .writeText(email)
-      .then(() => {
-        setShowNotification(true);
-        setTimeout(() => setShowNotification(false), 3000);
-      })
-      .catch((err) => console.error('Error al copiar el correo electrónico', err));
+  const handleCopyEmail = async () => {
+    const ok = await copyText(ABOUT_ME.links.email);
+    showToast(ok ? 'Correo copiado al portapapeles' : 'No se pudo copiar el correo');
   };
 
   return (
-    <section className="flex-block md:flex items-center my-64 sm:my-96 md:mt-12 w-full">
-      {showNotification && <Notification message="Email copiado al portapapeles" />}
+    <div className="fade-up py-20 md:py-28">
+      <p className="text-sm font-medium text-accent">
+        {ABOUT_ME.role} · {ABOUT_ME.location}
+      </p>
 
-      <div className="flex flex-col text-start md:w-full sm:w-12/12 md:m-5 sm:m-0 gap-3">
-        <section>
-          <h1 className="text-4xl font-bold bg-gradient-to-r from-blue-500 via-blue-400 to-cyan-500 bg-clip-text text-transparent pb-1 dark:drop-shadow-lg">
-            {ABOUT_ME.name}
-          </h1>
-          <h2 className="text-step-2 font-bold capitalize font-code text-black dark:text-gray-200">{ABOUT_ME.title}</h2>
-          <p className="mt-2 animate-fade-up text-gray-700 dark:text-gray-300">
-            {ABOUT_ME.description.replace('{experience}', experience.toString())}
-          </p>
-        </section>
+      <h1 className="mt-4 max-w-4xl text-5xl font-semibold tracking-tight text-ink sm:text-6xl md:text-7xl">
+        {ABOUT_ME.name}
+      </h1>
 
-        <section className="flex gap-3">
-          <ButtonTooltip text="Github" href={ABOUT_ME.links.github} icon={<GithubIcon />} />
-          <ButtonTooltip text="LinkedIn" href={ABOUT_ME.links.linkedin} icon={<LinkedInIcon />} />
+      <p className="mt-6 max-w-2xl text-base leading-7 text-ink-muted sm:text-lg sm:leading-8">
+        {ABOUT_ME.description.replace('{experience}', String(experienceYears))}
+      </p>
 
-          <ButtonTooltip text="Correo electrónico">
-            <button className="block rounded-full p-1" onClick={handleEmailCopy} aria-label="Copiar correo">
-              <EmailIcon />
-            </button>
-          </ButtonTooltip>
-
-          <ButtonTooltip text="Visualizar CV" href={ABOUT_ME.links.cv} icon={<CvIcon />} />
-        </section>
+      <div className="mt-9 flex flex-wrap items-center gap-3">
+        <a href="#projects" className="btn btn-primary">
+          Ver proyectos
+        </a>
+        <button type="button" onClick={openCvViewer} className="btn btn-secondary">
+          <FileIcon className="size-4" />
+          Ver CV
+        </button>
       </div>
 
-      {/* Suspense envuelve la carga dinámica del componente pesado */}
-      <div ref={ref}>
-        {inView && (
-          <Suspense fallback={<Loading />}>
-            <SplineComponent url={ABOUT_ME.splineScene} />
-          </Suspense>
-        )}
-      </div>
-    </section>
+      <ul className="mt-7 flex items-center gap-2" aria-label="Redes de contacto">
+        {SOCIAL_LINKS.map(({ label, href, icon: Icon }) => (
+          <li key={label}>
+            <a href={href} target="_blank" rel="noreferrer" aria-label={label} title={label} className="icon-btn">
+              <Icon className="size-4.5" />
+            </a>
+          </li>
+        ))}
+        <li>
+          <button
+            type="button"
+            className="icon-btn"
+            aria-label="Copiar correo electrónico"
+            title="Copiar correo electrónico"
+            onClick={handleCopyEmail}
+          >
+            <MailIcon className="size-4.5" />
+          </button>
+        </li>
+      </ul>
+    </div>
   );
 };
 
 export default AboutMe;
-
-interface ButtonTooltipProps {
-  text: string;
-  href?: string;
-  icon?: React.ReactNode;
-  children?: React.ReactNode;
-}
-
-const ButtonTooltip = ({ text, href, icon, children }: ButtonTooltipProps) => (
-  <Tooltip text={text}>
-    {href ? (
-      <span className="block dark:bg-transparent rounded-full p-1">
-        <a href={href} target="_blank" rel="noreferrer">
-          {icon}
-        </a>
-      </span>
-    ) : (
-      children
-    )}
-  </Tooltip>
-);

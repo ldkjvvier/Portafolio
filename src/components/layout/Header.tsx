@@ -1,40 +1,67 @@
-import { useEffect, useState } from 'react';
-import { ToggleDarkMode } from '../ToggleDarkMode';
-import { PAGE_SECTIONS } from '@/constants/PageSections';
-
-const INCLUDED_SECTIONS = ['about', 'experience', 'skills', 'projects'];
-const filteredSections = PAGE_SECTIONS.filter(({ id }) => INCLUDED_SECTIONS.includes(id));
+import { useEffect, useMemo, useState } from 'react';
+import { CommandPalette } from '@/components/CommandPalette';
+import { SearchIcon } from '@/components/Icons/Icons';
+import { ThemeToggle } from '@/components/ThemeToggle';
+import { ABOUT_ME } from '@/constants/AboutMeData';
+import { HEADER_SECTIONS } from '@/constants/PageSections';
 
 export const Header = () => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [paletteOpen, setPaletteOpen] = useState(false);
+  const shortcutLabel = useMemo(
+    () => (typeof navigator !== 'undefined' && /Mac/i.test(navigator.platform) ? '⌘ K' : 'Ctrl K'),
+    []
+  );
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (isMobileMenuOpen) setIsMobileMenuOpen(false);
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 'k') {
+        event.preventDefault();
+        setPaletteOpen((prev) => !prev);
+      }
     };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [isMobileMenuOpen]);
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
 
   return (
-    <header className="fixed top-0 z-50 w-screen px-4 py-4 mx-auto transition-all flex justify-center text-sm">
-      <section className="header-section max-w-sm md:max-w-2xl flex items-center justify-center rounded-full px-3 py-2 text-theme-primary-light dark:text-theme-primary-dark">
-        {/* Desktop Nav */}
-        <nav className="flex items-center gap-1 sm:gap-3 md:gap-4 lg:gap-5 xl:gap-6 font-medium">
-          {filteredSections.map(({ id, title, label }) => (
+    <header className="sticky top-0 z-40 border-b border-line bg-bg/85 backdrop-blur-md">
+      <div className="mx-auto flex h-16 max-w-6xl items-center gap-3 px-4 sm:px-6 lg:px-8">
+        <a href="#about" className="shrink-0 text-sm font-semibold tracking-tight text-ink" aria-label="Ir al inicio">
+          {ABOUT_ME.name}
+        </a>
+
+        <nav
+          aria-label="Secciones del portafolio"
+          className="hide-scrollbar ml-auto flex min-w-0 items-center gap-1 overflow-x-auto"
+        >
+          {HEADER_SECTIONS.map(({ id, title, navigationLabel }) => (
             <a
-              href={`#${id}`}
-              aria-label={title}
               key={id}
-              className="cursor-pointer transition-colors duration-200 hover:text-theme-hover-light dark:hover:text-theme-hover-dark"
+              href={`#${id}`}
+              className="shrink-0 rounded-md px-3 py-2 text-sm text-ink-muted transition-colors hover:bg-surface-2 hover:text-ink"
             >
-              {label ?? title}
+              {navigationLabel ?? title}
             </a>
           ))}
-          <ToggleDarkMode />
         </nav>
-      </section>
+
+        <button
+          type="button"
+          className="icon-btn gap-2 sm:w-auto sm:px-3"
+          aria-label={`Abrir paleta de comandos (${shortcutLabel})`}
+          aria-haspopup="dialog"
+          onClick={() => setPaletteOpen(true)}
+        >
+          <SearchIcon className="size-4" />
+          <kbd className="kbd hidden sm:inline-flex" aria-hidden="true">
+            {shortcutLabel}
+          </kbd>
+        </button>
+
+        <ThemeToggle />
+      </div>
+
+      <CommandPalette open={paletteOpen} onClose={() => setPaletteOpen(false)} />
     </header>
   );
 };

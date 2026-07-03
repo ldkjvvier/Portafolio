@@ -1,105 +1,57 @@
-interface Skill {
-  name: string;
-  title: string;
-  lightBackground: string;
-  darkBackground: string;
-}
+import type { Skill, SkillGroup } from '@/types/portfolio';
 
+/** Stack principal: se muestra como grilla de iconos. */
 export const SKILLS: Skill[] = [
+  { title: 'HTML5', icon: 'abilities/html.png' },
+  { title: 'CSS3', icon: 'abilities/css.png' },
+  { title: 'JavaScript', icon: 'abilities/js.png' },
+  { title: 'TypeScript', icon: 'abilities/Typescript.png' },
+  { title: 'React', icon: 'abilities/react.png' },
+  { title: 'Next.js', icon: 'abilities/nextjs.png' },
+  { title: 'Redux', icon: 'abilities/redux.png' },
+  { title: 'Tailwind CSS', icon: 'abilities/tailwind.png' },
+  { title: 'Node.js', icon: 'abilities/nodejs.png' },
+  { title: 'MongoDB', icon: 'abilities/mongodb.png' },
+  { title: 'PostgreSQL', icon: 'abilities/postgresql.svg' },
+  { title: 'Docker', icon: 'abilities/docker.svg' },
+  { title: 'n8n', icon: 'abilities/n8n.svg' },
+  { title: 'Azure', icon: 'abilities/azure.svg' },
+  { title: 'AWS Lambda', icon: 'abilities/aws-lambda.png' },
+  { title: 'Git', icon: 'abilities/git.png' }
+];
+
+/** Detalle por área, alineado al CV. */
+export const SKILL_GROUPS: SkillGroup[] = [
   {
-    name: 'html',
-    title: 'HTML5',
-    lightBackground: 'bg-orange-500/20',
-    darkBackground: 'dark:bg-orange-500/30'
+    title: 'Automatización y ciberseguridad',
+    skills: ['Automatización SOC', 'SOAR', 'n8n', 'Playbooks de respuesta', 'Entra ID', 'VPN / NAC', 'Ticketing']
   },
   {
-    name: 'css',
-    title: 'CSS3',
-    lightBackground: 'bg-blue-500/20',
-    darkBackground: 'dark:bg-blue-500/30'
+    title: 'Frontend',
+    skills: ['React', 'Next.js', 'Redux', 'TanStack Query', 'MUI', 'Tailwind CSS', 'Bootstrap']
   },
   {
-    name: 'js',
-    title: 'JavaScript',
-    lightBackground: 'bg-yellow-500/10',
-    darkBackground: 'dark:bg-yellow-500/30'
+    title: 'Backend',
+    skills: ['Node.js', 'Express', 'APIs REST', 'JWT', 'Zod', 'Mongoose', 'Multer']
   },
   {
-    name: 'react',
-    title: 'React',
-    lightBackground: 'bg-blue-600/20',
-    darkBackground: 'dark:bg-blue-600/30'
+    title: 'Bases de datos',
+    skills: ['MongoDB', 'PostgreSQL', 'MySQL', 'SQL']
   },
   {
-    name: 'nodejs',
-    title: 'NodeJS',
-    lightBackground: 'bg-green-600/20',
-    darkBackground: 'dark:bg-green-600/30'
+    title: 'Cloud y DevOps',
+    skills: ['AWS Lambda', 'Amazon S3', 'Azure', 'Docker', 'Linux']
   },
   {
-    name: 'mongodb',
-    title: 'MongoDB',
-    lightBackground: 'bg-green-500/20',
-    darkBackground: 'dark:bg-green-500/30'
+    title: 'Testing y calidad',
+    skills: ['Jest', 'Vitest', 'Postman', 'Code review']
   },
   {
-    name: 'mysql',
-    title: 'MySQL',
-    lightBackground: 'bg-blue-600/20',
-    darkBackground: 'dark:bg-blue-600/30'
+    title: 'Lenguajes',
+    skills: ['TypeScript', 'JavaScript', 'Python', 'Java']
   },
   {
-    name: 'firebase',
-    title: 'Firebase',
-    lightBackground: 'bg-orange-500/20',
-    darkBackground: 'dark:bg-orange-500/30'
-  },
-  {
-    name: 'tailwind',
-    title: 'TailwindCSS',
-    lightBackground: 'bg-cyan-500/20',
-    darkBackground: 'dark:bg-cyan-500/30'
-  },
-  {
-    name: 'bootstrap',
-    title: 'Bootstrap',
-    lightBackground: 'bg-purple-700/20',
-    darkBackground: 'dark:bg-purple-700/30'
-  },
-  {
-    name: 'redux',
-    title: 'Redux',
-    lightBackground: 'bg-purple-600/20',
-    darkBackground: 'dark:bg-purple-600/30'
-  },
-  {
-    name: 'git',
-    title: 'Git',
-    lightBackground: 'bg-red-500/20',
-    darkBackground: 'dark:bg-red-500/30'
-  },
-  {
-    name: 'Typescript',
-    title: 'TypeScript',
-    lightBackground: 'bg-blue-600/20',
-    darkBackground: 'dark:bg-blue-600/30'
-  },
-  {
-    name: 'Python',
-    title: 'Python',
-    lightBackground: 'bg-blue-700/20',
-    darkBackground: 'dark:bg-blue-700/30'
-  },
-  {
-    name: 'aws-lambda',
-    title: 'AWS Lambda',
-    lightBackground: 'bg-orange-600/20',
-    darkBackground: 'dark:bg-orange-600/30'
-  },
-  {
-    name: 'nextjs',
-    title: 'NextJS',
-    lightBackground: 'bg-black/20',
-    darkBackground: 'dark:bg-black/30'
+    title: 'Metodologías y herramientas',
+    skills: ['Git', 'Pull Requests', 'Scrum', 'Jira', 'TargetProcess']
   }
 ];

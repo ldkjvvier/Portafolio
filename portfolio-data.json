@@ -1,0 +1,192 @@
+{
+  "schemaVersion": 1,
+  "exportedAt": "2026-05-07",
+  "profile": {
+    "name": "Javier Madariaga",
+    "headline": "FullStack Developer",
+    "bioTemplate": "Analista Programador de Inacap con {experience} años de experiencia en el desarrollo de aplicaciones web y móviles, con conocimientos en React, NodeJS, MongoDB, MySQL, Firebase, Git, entre otros.",
+    "experienceStartYear": 2023,
+    "experienceYears": 3,
+    "contact": {
+      "email": "javier.a.mada@gmail.com",
+      "github": "https://www.github.com/ldkjvvier",
+      "linkedin": "https://www.linkedin.com/in/javiermadariaga/",
+      "cv": "https://drive.google.com/file/d/1_NDtRly2qR1P7ppGtkcO0_PBVN2BWx_A/view"
+    },
+    "hero": {
+      "scene3dUrl": "https://prod.spline.design/Evj8fK2J5nOkiW9l/scene.splinecode"
+    }
+  },
+  "experience": [
+    {
+      "role": "Desarrollador Fullstack",
+      "company": "Freelance",
+      "companyUrl": null,
+      "workMode": "remoto",
+      "startDate": "2024-10-01",
+      "endDate": null,
+      "current": true,
+      "highlights": [
+        "Desarrollo de aplicaciones Frontend y Backend como freelancer, utilizando tecnologías modernas como TypeScript, Node.js, Express, MongoDB, Next.js, MUI, Tailwind CSS y Express Session.",
+        "Construcción y consumo de API REST, con pruebas realizadas en Postman para asegurar la funcionalidad y consistencia de los endpoints.",
+        "Manejo del control de versiones con Git para mantener un flujo de trabajo colaborativo y controlado.",
+        "Diseño e implementación de interfaces accesibles y responsivas, integrando MUI y Tailwind para una experiencia de usuario moderna.",
+        "Gestión de autenticación y sesiones utilizando Express Session, enfocándome en la seguridad y escalabilidad de las aplicaciones.",
+        "Participación en el ciclo completo de desarrollo, incluyendo despliegue en entornos de desarrollo y pruebas."
+      ]
+    },
+    {
+      "role": "Practicante de Desarrollo de Software",
+      "company": "Principal Financial Group",
+      "companyUrl": "https://www.principal.cl",
+      "workMode": "híbrido",
+      "startDate": "2024-07-01",
+      "endDate": "2024-10-01",
+      "current": false,
+      "highlights": [
+        "Desarrollo de aplicaciones frontend y backend utilizando TypeScript, Next.js y Node.js, aplicando estilos consistentes a través de la biblioteca interna de la empresa y utilizando arquitecturas serverless en AWS Lambda.",
+        "Implementación de metodologías ágiles bajo el marco Scrum, gestionando tareas y seguimiento de proyectos en TargetProcess para asegurar alineación y eficiencia en el desarrollo.",
+        "Colaboración activa en revisiones de código y gestión de versiones mediante Git y Pull Requests, garantizando la calidad del código y el cumplimiento de los estándares de desarrollo.",
+        "Contribución en la creación de soluciones escalables y optimizadas, orientadas a mejorar el rendimiento y la eficiencia de las aplicaciones sobre infraestructuras serverless."
+      ]
+    },
+    {
+      "role": "Desarrollador de software",
+      "company": "Rubic",
+      "companyUrl": "https://rubic.cl",
+      "workMode": "remoto",
+      "startDate": "2023-07-01",
+      "endDate": "2024-01-01",
+      "current": false,
+      "highlights": [
+        "Desarrollo de aplicaciones frontend y backend utilizando React y Node.js.",
+        "Gestión de sesiones de usuario a través de Express-session y almacenamiento en MongoDB.",
+        "Diseño e implementación de bases de datos en MongoDB para la persistencia de datos."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "title": "TicTacToe - 2024",
+      "summary": "Juego clásico de Tic Tac Toe desarrollado en React/Vite, donde podrás competir contra la maquina o personas en la misma computadora.",
+      "image": "/Portafolio/Images/projects/TicTacToe.webp",
+      "demoUrl": "https://tic-tac-toe-idkjvviers-projects.vercel.app",
+      "sourceUrl": "https://github.com/ldkjvvier/Tic-Tac-Toe"
+    },
+    {
+      "id": 2,
+      "title": "Pokedex - 2024",
+      "summary": "Clon de Pokedex hecho en React/Vite que permite buscar Pokemones y ver los detalles de cada uno.",
+      "image": "/Portafolio/Images/projects/Pokedex.webp",
+      "demoUrl": "https://pokedex-flame-zeta.vercel.app",
+      "sourceUrl": "https://github.com/ldkjvvier/Pokedex"
+    },
+    {
+      "id": 3,
+      "title": "CineVerse - 2024",
+      "summary": "Plataforma web desarrollada con Next.js que permite a los usuarios descubrir, buscar y explorar una amplia colección de películas. Ofrece información detallada como sinopsis, valoraciones y géneros.",
+      "image": "/Portafolio/Images/projects/CineVerse.webp",
+      "demoUrl": "https://movies-client-next.vercel.app/browse",
+      "sourceUrl": "https://github.com/ldkjvvier/Movies-client-next"
+    }
+  ],
+  "skills": [
+    {
+      "slug": "html",
+      "name": "HTML5"
+    },
+    {
+      "slug": "css",
+      "name": "CSS3"
+    },
+    {
+      "slug": "js",
+      "name": "JavaScript"
+    },
+    {
+      "slug": "react",
+      "name": "React"
+    },
+    {
+      "slug": "nodejs",
+      "name": "NodeJS"
+    },
+    {
+      "slug": "mongodb",
+      "name": "MongoDB"
+    },
+    {
+      "slug": "mysql",
+      "name": "MySQL"
+    },
+    {
+      "slug": "firebase",
+      "name": "Firebase"
+    },
+    {
+      "slug": "tailwind",
+      "name": "TailwindCSS"
+    },
+    {
+      "slug": "bootstrap",
+      "name": "Bootstrap"
+    },
+    {
+      "slug": "redux",
+      "name": "Redux"
+    },
+    {
+      "slug": "git",
+      "name": "Git"
+    },
+    {
+      "slug": "Typescript",
+      "name": "TypeScript"
+    },
+    {
+      "slug": "Python",
+      "name": "Python"
+    },
+    {
+      "slug": "aws-lambda",
+      "name": "AWS Lambda"
+    },
+    {
+      "slug": "nextjs",
+      "name": "NextJS"
+    }
+  ],
+  "inspirations": [
+    {
+      "id": 1,
+      "name": "Midudev",
+      "url": "https://www.youtube.com/c/midudev",
+      "avatar": "/Portafolio/Images/inspiration/midudev.jpg"
+    },
+    {
+      "id": 2,
+      "name": "HolaMundo",
+      "url": "https://www.youtube.com/@HolaMundoDev",
+      "avatar": "/Portafolio/Images/inspiration/holamundo.jpg"
+    },
+    {
+      "id": 3,
+      "name": "MoureDev",
+      "url": "https://www.youtube.com/@mouredev",
+      "avatar": "/Portafolio/Images/inspiration/mouredev.jpg"
+    },
+    {
+      "id": 4,
+      "name": "DeivChoi",
+      "url": "https://www.youtube.com/@DeivChoi",
+      "avatar": "/Portafolio/Images/inspiration/deivchoi.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Fazt",
+      "url": "https://www.youtube.com/@FaztTech",
+      "avatar": "/Portafolio/Images/inspiration/fazt.jpg"
+    }
+  ]
+}

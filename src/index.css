@@ -1,15 +1,6 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+
 @custom-variant dark (&:where(.dark, .dark *));
-
-
-@theme {
-  --color-theme-light: #f5f5f5;
-  --color-theme-dark: #131221;
-  --color-theme-primary-light: #262626;
-  --color-theme-primary-dark: #e5e5e5;
-  --color-theme-hover-light: #5b21b6;
-  --color-theme-hover-dark: #9089fc;
-}
 
 @font-face {
   font-family: 'Onest Variable';
@@ -17,106 +8,334 @@
   font-display: swap;
   font-weight: 100 900;
   src: url(@fontsource-variable/onest/files/onest-latin-wght-normal.woff2) format('woff2-variations');
-  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329,
+    U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
+/*
+ * Design tokens (semantic).
+ * Radius system: controls 10px (.btn, .input), containers 16px (.card), badges pill.
+ * Single accent: blue. No other hues on interactive elements.
+ */
 :root {
-  font-family: 'Onest Variable', sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  --bg: #fafafa;
+  --surface: #ffffff;
+  --surface-2: #f4f4f5;
+  --line: rgba(24, 24, 27, 0.09);
+  --line-strong: rgba(24, 24, 27, 0.16);
+  --ink: #18181b;
+  --ink-muted: #52525c;
+  --ink-faint: #6e6e78;
+  --accent: #2563eb;
+  --accent-hover: #1d4ed8;
+  --accent-contrast: #ffffff;
+  --accent-soft: rgba(37, 99, 235, 0.09);
+  --shadow-card: 0 1px 2px rgba(24, 24, 27, 0.04), 0 8px 24px -12px rgba(24, 24, 27, 0.08);
 
-  color: var(--color-theme-primary-light);
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+  color-scheme: light;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    color: var(--color-theme-primary-dark);
+html.dark {
+  --bg: #0b0b0d;
+  --surface: #131316;
+  --surface-2: #1b1b1f;
+  --line: rgba(244, 244, 245, 0.09);
+  --line-strong: rgba(244, 244, 245, 0.18);
+  --ink: #f4f4f5;
+  --ink-muted: #a1a1aa;
+  --ink-faint: #8b8b94;
+  --accent: #60a5fa;
+  --accent-hover: #93c5fd;
+  --accent-contrast: #0b0b0d;
+  --accent-soft: rgba(96, 165, 250, 0.12);
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.4), 0 8px 24px -12px rgba(0, 0, 0, 0.5);
+
+  color-scheme: dark;
+}
+
+@theme inline {
+  --font-sans: 'Onest Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-ink-faint: var(--ink-faint);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+}
+
+/* Base en @layer para no pisar componentes ni utilidades (el preflight de
+   Tailwind ya resetea a, button, img, etc.). */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    min-height: 100dvh;
+    background-color: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    overflow-x: clip;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  #root {
+    min-height: 100dvh;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    text-wrap: balance;
+  }
+
+  ::selection {
+    background: var(--accent);
+    color: var(--accent-contrast);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: 4px;
   }
 }
 
-body {
-  margin: 0;
-  min-height: 100dvh; /* Se cambia height a min-height para evitar problemas en móviles */
+/* --- Componentes base del design system --- */
+/* En @layer components para que las utilidades de Tailwind puedan sobreescribirlas. */
+
+@layer components {
+.card {
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  background: var(--surface);
 }
 
-html {
-  scroll-behavior: smooth;
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  height: 2.75rem;
+  padding: 0 1.25rem;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  font-size: 0.875rem;
+  font-weight: 500;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background-color 150ms ease,
+    border-color 150ms ease,
+    color 150ms ease,
+    transform 150ms ease;
 }
 
-/* Tooltip */
-.has-tooltip {
-  position: relative;
+.btn:active {
+  transform: scale(0.98);
 }
 
-.tooltip {
-  visibility: hidden;
-  position: absolute;
+.btn-primary {
+  background: var(--accent);
+  color: var(--accent-contrast);
 }
 
-.has-tooltip:hover .tooltip {
-  visibility: visible;
-  z-index: 50;
+.btn-primary:hover {
+  background: var(--accent-hover);
 }
 
+.btn-secondary {
+  border-color: var(--line-strong);
+  background: var(--surface);
+  color: var(--ink);
+}
 
-@keyframes header-blur-scroll-light {
-  0% {
-    backdrop-filter: blur(0px);
-    background: transparent;
+.btn-secondary:hover {
+  background: var(--surface-2);
+}
+
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--ink-muted);
+  cursor: pointer;
+  transition:
+    background-color 150ms ease,
+    border-color 150ms ease,
+    color 150ms ease,
+    transform 150ms ease;
+}
+
+.icon-btn:hover {
+  color: var(--ink);
+  border-color: var(--line-strong);
+  background: var(--surface-2);
+}
+
+.icon-btn:active {
+  transform: scale(0.96);
+}
+
+.input {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid var(--line-strong);
+  background: var(--surface);
+  padding: 0.7rem 0.9rem;
+  color: var(--ink);
+  transition:
+    border-color 150ms ease,
+    box-shadow 150ms ease;
+}
+
+.input::placeholder {
+  color: var(--ink-faint);
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+.input[aria-invalid='true'] {
+  border-color: #dc2626;
+}
+
+html.dark .input[aria-invalid='true'] {
+  border-color: #f87171;
+}
+
+.kbd {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  border-radius: 6px;
+  border: 1px solid var(--line);
+  background: var(--surface-2);
+  padding: 0.1rem 0.45rem;
+  font-size: 0.7rem;
+  font-weight: 500;
+  white-space: nowrap;
+  color: var(--ink-faint);
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+}
+
+/* Entrada sutil del hero; comunica jerarquía al cargar */
+@media (prefers-reduced-motion: no-preference) {
+  .fade-up {
+    animation: fade-up 500ms cubic-bezier(0.16, 1, 0.3, 1) both;
   }
 
-  100% {
-    backdrop-filter: blur(10px);
-    background: rgba(255, 255, 255, 0.5);
-    border-bottom-color: white;
-    -webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.35);
-    -moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.35);
-    box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.35);
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }
 
-@keyframes header-blur-scroll-dark {
-  0% {
-    backdrop-filter: blur(0px);
-    background: transparent;
-  }
-
-  100% {
-    backdrop-filter: blur(10px);
-    background: rgba(0, 0, 0, 0.5);
-    border-bottom-color: black;
-
-    -webkit-box-shadow:
-      0 4px 6px rgba(0, 0, 0, 0.6),
-      0 1px 10px rgba(0, 0, 0, 0.3);
-    -moz-box-shadow:
-      0 4px 6px rgba(0, 0, 0, 0.6),
-      0 1px 10px rgba(0, 0, 0, 0.3);
-    box-shadow:
-      0 4px 6px rgba(0, 0, 0, 0.6),
-      0 1px 10px rgba(0, 0, 0, 0.3);
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
 }
 
+/*
+ * Impresión: con el visor de CV abierto, la página imprime SOLO el documento.
+ * Esto es también lo que genera el PDF alojado en public/cv (print-to-PDF).
+ */
+@media print {
+  @page {
+    size: A4;
+    margin: 12mm 14mm;
+  }
 
-/* Aplica la animación según el tema */
-html:not(.dark) header section {
-  animation-name: header-blur-scroll-light;
-  animation-timeline: scroll();
-  animation-range: 0 250px;
-  animation-fill-mode: both;
+  body:has(.cv-document) #root {
+    display: none !important;
+  }
 
-}
+  body:has(.cv-document) {
+    background: #ffffff !important;
+    min-height: 0 !important;
+  }
 
-html.dark header section {
-  animation-name: header-blur-scroll-dark;
-  animation-timeline: scroll();
-  animation-range: 0 250px;
-  animation-fill-mode: both;
+  .cv-viewer-overlay [role='dialog'],
+  .cv-viewer-body {
+    background: #ffffff !important;
+  }
+
+  .cv-viewer-overlay {
+    position: static !important;
+    padding: 0 !important;
+    background: transparent !important;
+    backdrop-filter: none !important;
+    display: block !important;
+  }
+
+  .cv-viewer-overlay [role='dialog'] {
+    max-height: none !important;
+    max-width: none !important;
+    width: 100% !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    animation: none !important;
+  }
+
+  .cv-viewer-header {
+    display: none !important;
+  }
+
+  .cv-viewer-body {
+    overflow: visible !important;
+    padding: 0 !important;
+    background: transparent !important;
+  }
+
+  .cv-viewer-body > div {
+    max-width: none !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+
+  .cv-document {
+    padding: 0 !important;
+  }
+
+  .cv-entry {
+    break-inside: avoid;
+  }
 }

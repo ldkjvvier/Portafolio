@@ -1,32 +1,32 @@
-type ExperienceType = 'remoto' | 'presencial' | 'híbrido';
-
-interface Experience {
-  title: string;
-  company: string;
-  companyUrl: string;
-  type: ExperienceType;
-  startDate: string;
-  endDate: string;
-  isCurrent?: boolean;
-  description: string[];
-}
+import type { Experience } from '@/types/portfolio';
 
 export const EXPERIENCES: Experience[] = [
   {
-    title: 'Desarrollador Fullstack',
-    company: 'Freelance',
-    companyUrl: '',
-    type: 'remoto',
-    startDate: '2024-10-01',
+    title: 'Especialista en Ciberseguridad · Full Stack y Automatización',
+    company: 'Grupo Falabella',
+    companyUrl: 'https://www.grupofalabella.com',
+    startDate: '2025-05-01',
     endDate: '',
     isCurrent: true,
-    description: [
-      '• Desarrollo de aplicaciones Frontend y Backend como freelancer, utilizando tecnologías modernas como TypeScript, Node.js, Express, MongoDB, Next.js, MUI, Tailwind CSS y Express Session.',
-      '• Construcción y consumo de API REST, con pruebas realizadas en Postman para asegurar la funcionalidad y consistencia de los endpoints.',
-      '• Manejo del control de versiones con Git para mantener un ujo de trabajo colaborativo y controlado.',
-      '• Diseño e implementación de interfaces accesibles y responsivas, integrando MUI y Tailwind para una experiencia de usuario moderna.',
-      '• Gestión de autenticación y sesiones utilizando Express Session, enfocándome en la seguridad y escalabilidad de las aplicaciones.',
-      '• Participación en el ciclo completo de desarrollo, incluyendo despliegue en entornos de desarrollo y pruebas.'
+    highlights: [
+      'Automatización de operaciones SOC con un SOAR desarrollado in-house y n8n, contribuyendo a un 60% de automatización de la operación y al cumplimiento del 100% de los SLA de primera respuesta ante alertas.',
+      'Desarrollo de un chatbot interno en n8n para optimizar flujos manuales y reducir tiempos operativos en tareas repetitivas.',
+      'Orquestación de flujos de respuesta: envío de correos de alerta, generación de tickets y ejecución de tareas operativas asociadas a alertas.',
+      'Automatizaciones de contención de usuarios en entornos cloud y on-premise: baja de conexión VPN/NAC y reseteo de contraseñas.',
+      'Despliegue de proyectos en servidores Linux con Docker y levantamiento de recursos en Azure para soportar nuevas automatizaciones e integraciones.'
+    ]
+  },
+  {
+    title: 'Desarrollador Full Stack',
+    company: 'Freelance',
+    type: 'remoto',
+    startDate: '2024-10-01',
+    endDate: '2025-05-01',
+    highlights: [
+      'Desarrollo de aplicaciones Full Stack con TypeScript, Node.js, Express, MongoDB y Next.js.',
+      'Diseño e implementación de interfaces responsivas y accesibles con MUI y Tailwind CSS, enfocadas en experiencia de usuario.',
+      'Construcción y consumo de APIs REST, validando endpoints y flujos mediante pruebas en Postman.',
+      'Implementación de autenticación y manejo de sesiones con Express Session, considerando buenas prácticas de seguridad y escalabilidad.'
     ]
   },
   {
@@ -36,26 +36,25 @@ export const EXPERIENCES: Experience[] = [
     type: 'híbrido',
     startDate: '2024-07-01',
     endDate: '2024-10-01',
-    isCurrent: false,
-    description: [
-      '• Desarrollo de aplicaciones frontend y backend utilizando TypeScript, Next.js, y Node.js, aplicando estilos consistentes a través de la biblioteca interna de la empresa y utilizando arquitecturas serverless en AWS Lambda.',
-      '• Implementación de metodologías ágiles bajo el marco Scrum, gestionando tareas y seguimiento de proyectos en TargetProcess para asegurar alineación y eficiencia en el desarrollo.',
-      '• Colaboración activa en revisiones de código y gestión de versiones mediante Git y Pull Requests, garantizando la calidad del código y el cumplimiento de los estándares de desarrollo.',
-      '• Contribución en la creación de soluciones escalables y optimizadas, orientadas a mejorar el rendimiento y la eficiencia de las aplicaciones sobre infraestructuras serverless.'
+    highlights: [
+      'Desarrollo de aplicaciones frontend y backend con Next.js, TypeScript y arquitecturas serverless en AWS Lambda.',
+      'Implementación de metodologías ágiles bajo Scrum, gestionando tareas con TargetProcess.',
+      'Colaboración en la creación de soluciones escalables y optimizadas para mejorar el rendimiento en infraestructuras serverless.',
+      'Participación activa en revisiones de código y control de versiones con Git y Pull Requests.',
+      'Supervisión y ejecución del despliegue de aplicaciones en el ambiente de desarrollo, asegurando su correcta integración y funcionamiento.'
     ]
   },
   {
-    title: 'Desarrollador de software',
+    title: 'Desarrollador de Software',
     company: 'Rubic',
     companyUrl: 'https://rubic.cl',
     type: 'remoto',
     startDate: '2023-07-01',
     endDate: '2024-01-01',
-    isCurrent: false,
-    description: [
-      '• Desarrollo de aplicaciones frontend y backend utilizando React y Node.js.',
-      '• Gestión de sesiones de usuario a través de Express-session y almacenamiento en MongoDB.',
-      '• Diseño e implementación de bases de datos en MongoDB para la persistencia de datos.'
+    highlights: [
+      'Desarrollo de aplicaciones frontend y backend con React y Node.js.',
+      'Gestión de sesiones de usuario con Express Session y almacenamiento en MongoDB.',
+      'Diseño e implementación de bases de datos en MongoDB para la persistencia de datos.'
     ]
   }
 ];

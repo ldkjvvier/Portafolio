@@ -1,67 +1,72 @@
 import { EXPERIENCES } from '@/constants/Experiences';
 
-const formatDate = (date: string) => {
-  return new Date(`${date}T00:00:00`).toLocaleDateString('es-ES', {
-    month: 'long',
-    year: 'numeric'
-  });
-};
+const formatDate = (date: string) =>
+  new Date(`${date}T00:00:00`).toLocaleDateString('es-ES', { month: 'short', year: 'numeric' });
 
-const typeClass = {
-  remoto: 'bg-blue-100 text-blue-800 dark:bg-sky-900 dark:text-sky-300',
-  presencial: 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-300',
-  híbrido: 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300'
-};
+const Experience = () => (
+  <ol className="relative space-y-10 border-l border-line pl-6 sm:pl-8">
+    {EXPERIENCES.map((experience) => {
+      const start = formatDate(experience.startDate);
+      const end = experience.isCurrent ? 'Actualidad' : formatDate(experience.endDate);
 
-const Experience = () => {
-  return (
-    <ol className="relative mx-3.5 mt-16 border-s-2 border-gray-200 dark:border-gray-700">
-      {EXPERIENCES.map((exp, index) => {
-        const startDateFormatted = formatDate(exp.startDate);
-        const endDateFormatted = exp.isCurrent ? 'Presente' : formatDate(exp.endDate);
+      return (
+        <li key={`${experience.company}-${experience.startDate}`} className="relative">
+          <span
+            className={`absolute -left-6 top-1.5 size-3 -translate-x-1/2 rounded-full border-2 border-bg sm:-left-8 ${
+              experience.isCurrent ? 'bg-accent' : 'bg-line-strong'
+            }`}
+            aria-hidden="true"
+          />
 
-        return (
-          <article className="flex flex-col gap-5 lg:flex-row ml-6 space-y-8" key={index}>
-            <span className="absolute -start-[17px] flex size-8 items-center justify-center rounded-full text-yellow-400 text-5xl">
-              &bull;
-            </span>
+          <article>
+            <header className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+              <h3 className="text-lg font-semibold text-ink">{experience.title}</h3>
+              {experience.type && (
+                <span className="rounded-full border border-line px-2.5 py-0.5 text-xs font-medium capitalize text-ink-muted">
+                  {experience.type}
+                </span>
+              )}
+            </header>
 
-            <section className="lg:w-2/5">
-              <h3 className="mb-2 flex items-center text-xl font-bold text-gray-800/90 dark:text-gray-300">
-                {exp.title}
-              </h3>
-
-              <h4 className="mb-1 text-xl font-semibold text-gray-800/90 dark:text-gray-300">
-                <a className="hover:underline" href={exp.companyUrl} target="_blank" rel="noopener noreferrer">
-                  {exp.company}
+            <p className="mt-1 flex flex-wrap items-center gap-x-2 text-sm text-ink-muted">
+              {experience.companyUrl ? (
+                <a
+                  href={experience.companyUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-medium text-ink transition-colors hover:text-accent"
+                >
+                  {experience.company}
                 </a>
-              </h4>
-              <p
-                aria-label={`Período de trabajo: ${startDateFormatted} - ${endDateFormatted}`}
-                className="mb-3 block text-sm font-normal capitalize leading-none text-gray-800/90 dark:text-gray-300 lg:mb-5"
-              >
-                <time dateTime={exp.startDate}>{startDateFormatted}</time>
-                <span className="mx-2">-</span>
-                <time dateTime={exp.endDate}>{endDateFormatted}</time>
-              </p>
-
-              <span className={`rounded px-2.5 py-0.5 text-sm font-medium capitalize ${typeClass[exp.type]}`}>
-                {exp.type}
+              ) : (
+                <span className="font-medium text-ink">{experience.company}</span>
+              )}
+              <span aria-hidden="true">·</span>
+              <span>
+                <time dateTime={experience.startDate} className="capitalize">
+                  {start}
+                </time>
+                {' a '}
+                {experience.isCurrent ? (
+                  end
+                ) : (
+                  <time dateTime={experience.endDate} className="capitalize">
+                    {end}
+                  </time>
+                )}
               </span>
-            </section>
+            </p>
 
-            <section className="flex-1 space-y-5 text-gray-800/90 dark:text-gray-300">
-              {exp.description.map((line, index) => (
-                <p className="text-pretty text-base text-gray-800/90 dark:text-gray-300" key={index}>
-                  {line}
-                </p>
+            <ul className="mt-4 max-w-3xl list-disc space-y-2 pl-5 text-sm leading-6 text-ink-muted marker:text-ink-faint">
+              {experience.highlights.map((highlight) => (
+                <li key={highlight}>{highlight}</li>
               ))}
-            </section>
+            </ul>
           </article>
-        );
-      })}
-    </ol>
-  );
-};
+        </li>
+      );
+    })}
+  </ol>
+);
 
 export default Experience;
