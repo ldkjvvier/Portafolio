@@ -9,7 +9,8 @@ const CV_VIEWER_EVENT = 'app:cv-viewer';
 const CV_HASH = '#cv';
 
 const isCvUrl = () =>
-  window.location.hash === CV_HASH || new URLSearchParams(window.location.search).has('cv');
+  typeof window !== 'undefined' &&
+  (window.location.hash === CV_HASH || new URLSearchParams(window.location.search).has('cv'));
 
 /** Abre el visor de CV desde cualquier punto de la app (hero, command palette…). */
 export const openCvViewer = () => {

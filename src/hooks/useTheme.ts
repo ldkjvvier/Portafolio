@@ -9,6 +9,8 @@ const isThemeMode = (value: unknown): value is ThemeMode =>
   value === 'light' || value === 'dark' || value === 'system';
 
 const readStoredMode = (): ThemeMode => {
+  // En el prerender (Node) no hay preferencia guardada que leer.
+  if (typeof window === 'undefined') return 'system';
   try {
     const stored = localStorage.getItem(STORAGE_KEY);
     return isThemeMode(stored) ? stored : 'system';

@@ -8,7 +8,7 @@ import globals from 'globals';
 export default [
   js.configs.recommended,
   {
-    ignores: ['dist']
+    ignores: ['dist', 'dist-ssr']
   },
   {
     files: ['**/*.{ts,tsx,js,jsx}'],
