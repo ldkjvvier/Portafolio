@@ -3,7 +3,7 @@
 ## Project Snapshot
 
 - Personal portfolio SPA built with Vite 6, React 19, TypeScript 5, and Tailwind CSS 4.
-- Deployment target is GitHub Pages; treat this as a static site with a configured base URL.
+- Deployment target is Vercel (project `javiermadariaga`, https://javiermadariaga.vercel.app/), configured in [vercel.json](vercel.json); every push to `main` deploys to production. Treat this as a static site served from the root.
 - Product overview lives in [README.md](README.md), but commands and build behavior should be taken from [package.json](package.json) and [vite.config.ts](vite.config.ts).
 
 ## Commands
@@ -14,7 +14,7 @@
 - `npm run build` is the main validation step; it runs lint, `tsc`, the Vite production build, and `npm run prerender`.
 - `npm run prerender` builds [src/entry-server.tsx](src/entry-server.tsx) for Node and [scripts/prerender.js](scripts/prerender.js) injects the rendered page into `dist/index.html`, so crawlers without JavaScript see the full content.
 - `npm run preview` serves the production build locally.
-- `npm run deploy` publishes `dist/` to GitHub Pages.
+- There is no deploy script: Vercel builds with `npm run build` on every push (previews for other branches).
 - There is no test script in this repository.
 
 ## Architecture
@@ -48,7 +48,8 @@
 
 - Lint uses `--max-warnings 0`; even a warning breaks the standard validation flow.
 - TypeScript is strict and rejects unused locals and parameters; avoid placeholder variables and partial refactors.
-- GitHub Pages uses the non-root base URL configured in [vite.config.ts](vite.config.ts), so asset and navigation changes must remain static-host friendly.
+- Keep asset and navigation changes static-host friendly, and keep resolving `public/` paths with `withBase`.
+- The public URL `https://javiermadariaga.vercel.app/` is hardcoded in [index.html](index.html) (canonical, Open Graph, JSON-LD), [public/robots.txt](public/robots.txt), [public/sitemap.xml](public/sitemap.xml) and `siteUrl` in [src/constants/CvData.ts](src/constants/CvData.ts); update all of them together if the domain changes.
 - The page is prerendered in Node at build time: never touch `window`, `document`, `localStorage` or `navigator` during render (state initializers included); keep browser access in effects and event handlers, or guard it with `typeof window !== 'undefined'`. Portals are only safe while their component returns `null` on the server (closed by default).
 - Heavy visual elements and animations should be checked on mobile and desktop before finalizing edits.
 - [README.md](README.md) is currently incomplete, so treat the source files and config files as the source of truth.

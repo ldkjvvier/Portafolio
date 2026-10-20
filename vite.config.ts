@@ -8,7 +8,5 @@ export default defineConfig({
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: [{ find: '@', replacement: path.resolve(__dirname, 'src') }]
-  },
-  // GitHub Pages sirve el sitio bajo /Portafolio/; debe ser una ruta, no una URL absoluta.
-  base: '/Portafolio/'
+  }
 });
