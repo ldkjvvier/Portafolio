@@ -3,11 +3,12 @@ import { withBase } from '@/lib/assets';
 
 const Skills = () => (
   <div>
-    <ul className="grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-8" aria-label="Stack principal">
+    {/* Flex con wrap centrado: se adapta a cualquier cantidad de íconos sin dejar filas a medias. */}
+    <ul className="flex flex-wrap justify-center gap-3" aria-label="Stack principal">
       {SKILLS.map((skill) => (
         <li
           key={skill.title}
-          className="card flex flex-col items-center gap-2.5 px-3 py-4 text-center transition-colors hover:border-line-strong"
+          className="card flex w-[calc(50%-0.375rem)] flex-col items-center gap-2.5 px-3 py-4 text-center transition-colors hover:border-line-strong sm:w-32"
         >
           <img
             src={withBase(skill.icon)}
