@@ -27,6 +27,10 @@ export const SKILL_GROUPS: SkillGroup[] = [
     skills: ['Automatización SOC', 'SOAR', 'n8n', 'Playbooks de respuesta', 'Entra ID', 'VPN / NAC', 'Ticketing']
   },
   {
+    title: 'Inteligencia artificial',
+    skills: ['LLM', 'Agentes de IA en n8n', 'Chatbots', 'Triage de alertas con IA', 'Prompt engineering']
+  },
+  {
     title: 'Frontend',
     skills: ['React', 'Next.js', 'Redux', 'TanStack Query', 'MUI', 'Tailwind CSS', 'Bootstrap']
   },

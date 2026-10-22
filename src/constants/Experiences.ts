@@ -10,7 +10,8 @@ export const EXPERIENCES: Experience[] = [
     isCurrent: true,
     highlights: [
       'Automatización de operaciones SOC con un SOAR desarrollado in-house y n8n, contribuyendo a un 60% de automatización de la operación y al cumplimiento del 100% de los SLA de primera respuesta ante alertas.',
-      'Desarrollo de un chatbot interno en n8n para optimizar flujos manuales y reducir tiempos operativos en tareas repetitivas.',
+      'Triage de alertas SOC asistido por LLM: clasificación y priorización automática de alertas integrada en los flujos de n8n.',
+      'Desarrollo de un chatbot interno con LLM en n8n para optimizar flujos manuales y reducir tiempos operativos en tareas repetitivas.',
       'Orquestación de flujos de respuesta: envío de correos de alerta, generación de tickets y ejecución de tareas operativas asociadas a alertas.',
       'Automatizaciones de contención de usuarios en entornos cloud y on-premise: baja de conexión VPN/NAC y reseteo de contraseñas.',
       'Despliegue de proyectos en servidores Linux con Docker y levantamiento de recursos en Azure para soportar nuevas automatizaciones e integraciones.'
