@@ -1,3 +1,4 @@
+import { RichText } from '@/components/ui/RichText';
 import { ABOUT_ME } from '@/constants/AboutMeData';
 import { CV } from '@/constants/CvData';
 import { EDUCATION, LANGUAGES } from '@/constants/EducationData';
@@ -13,6 +14,9 @@ const formatGraduation = (date: string) => {
   const formatted = new Date(`${date}-01T00:00:00`).toLocaleDateString('es-ES', { month: 'long', year: 'numeric' });
   return formatted.charAt(0).toUpperCase() + formatted.slice(1);
 };
+
+/** Resaltado en el "papel" del CV: colores fijos, independientes del tema. */
+const CV_STRONG = 'font-semibold text-zinc-900';
 
 const SectionTitle = ({ children }: { children: string }) => (
   <h3 className="mb-3 border-b border-zinc-200 pb-1.5 text-[0.7rem] font-bold uppercase tracking-[0.14em] text-blue-700">
@@ -37,7 +41,9 @@ export const CvDocument = () => (
     </header>
 
     <section className="mt-6" aria-label="Resumen">
-      <p className="text-justify leading-relaxed text-zinc-700">{CV.summary}</p>
+      <p className="text-justify leading-relaxed text-zinc-700">
+        <RichText text={CV.summary} strongClassName={CV_STRONG} />
+      </p>
     </section>
 
     <section className="mt-7" aria-label="Experiencia profesional">
@@ -57,7 +63,9 @@ export const CvDocument = () => (
             </p>
             <ul className="mt-2 list-disc space-y-1 pl-4 text-zinc-700 marker:text-zinc-400">
               {experience.highlights.map((highlight) => (
-                <li key={highlight}>{highlight}</li>
+                <li key={highlight}>
+                  <RichText text={highlight} strongClassName={CV_STRONG} />
+                </li>
               ))}
             </ul>
           </div>

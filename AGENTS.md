@@ -2,7 +2,7 @@
 
 ## Project Snapshot
 
-- Personal portfolio SPA built with Vite 6, React 19, TypeScript 5, and Tailwind CSS 4.
+- Personal portfolio SPA built with Vite 8, React 19, TypeScript 6, and Tailwind CSS 4.
 - Deployment target is Vercel (project `javiermadariaga`, https://javiermadariaga.vercel.app/), configured in [vercel.json](vercel.json); every push to `main` deploys to production. Treat this as a static site served from the root.
 - Product overview lives in [README.md](README.md), but commands and build behavior should be taken from [package.json](package.json) and [vite.config.ts](vite.config.ts).
 
@@ -36,6 +36,7 @@
 - Use the `@/` alias for imports from `src`, consistent with [tsconfig.app.json](tsconfig.app.json) and [vite.config.ts](vite.config.ts).
 - Keep UI copy in Spanish unless the user explicitly requests a language change.
 - Prefer small presentational components fed by typed constants over embedding large data objects directly in components.
+- To emphasize achievements or recruiter keywords in constant text (hero description, experience highlights, CV summary), wrap them in `**…**` and render the string with [RichText](src/components/ui/RichText.tsx). Keep it to about one emphasized phrase per bullet so the emphasis stays meaningful.
 - Preserve the existing PascalCase component filenames and barrel-export pattern in [src/components/sections/index.ts](src/components/sections/index.ts).
 - When adding a new section, update all of the following:
   - the component in `src/components/sections`
@@ -52,7 +53,7 @@
 - The public URL `https://javiermadariaga.vercel.app/` is hardcoded in [index.html](index.html) (canonical, Open Graph, JSON-LD), [public/robots.txt](public/robots.txt), [public/sitemap.xml](public/sitemap.xml) and `siteUrl` in [src/constants/CvData.ts](src/constants/CvData.ts); update all of them together if the domain changes.
 - The page is prerendered in Node at build time: never touch `window`, `document`, `localStorage` or `navigator` during render (state initializers included); keep browser access in effects and event handlers, or guard it with `typeof window !== 'undefined'`. Portals are only safe while their component returns `null` on the server (closed by default).
 - Heavy visual elements and animations should be checked on mobile and desktop before finalizing edits.
-- [README.md](README.md) is currently incomplete, so treat the source files and config files as the source of truth.
+- [README.md](README.md) is the public overview for GitHub visitors; for exact behavior, treat the source files and config files as the source of truth.
 
 ## Validation
 

@@ -1,24 +1,31 @@
-# Portafolio
+# Portafolio · Javier Madariaga
 
-Este es mi portafolio personal, donde muestro mis habilidades, experiencia y proyectos destacados como desarrollador FullStack. El objetivo de este portafolio es proporcionar una visión clara de mi trabajo y facilitar el contacto con posibles empleadores o colaboradores.
+Portafolio personal de Javier Madariaga, desarrollador Full Stack especializado en automatización de ciberseguridad (SOC) con n8n, SOAR y LLM.
 
-## Tecnologías Utilizadas
+- **Sitio:** [javiermadariaga.vercel.app](https://javiermadariaga.vercel.app/)
+- **CV:** [javiermadariaga.vercel.app/#cv](https://javiermadariaga.vercel.app/#cv)
+- **LinkedIn:** [javiermadariaga](https://www.linkedin.com/in/javiermadariaga/)
 
-- **Frontend**: React, Tailwind CSS
-- **Otras Herramientas**: Firebase, Git, Spline 3D
+## Tecnologías
 
-## Secciones del Portafolio
+- React 19, TypeScript y Tailwind CSS 4, compilado con Vite.
+- Prerender en el build: el HTML publicado incluye todo el contenido, para buscadores y vistas previas en redes.
+- Visor de CV integrado, que genera el mismo documento que el PDF descargable.
+- Tema claro y oscuro, y paleta de comandos (Ctrl/⌘ + K).
+- Desplegado en Vercel: cada push a `main` publica a producción.
 
-1. **Sobre Mí**: Información personal, experiencia y enlaces a mis redes profesionales.
-2. **Habilidades**: Tecnologías y herramientas que domino, representadas con íconos interactivos.
-3. **Experiencia**: Resumen de mi trayectoria profesional.
-4. **Proyectos**: Lista de proyectos destacados con descripciones y enlaces.
-5. **Contacto**: Formulario para que los visitantes puedan comunicarse conmigo.
+## Desarrollo
 
-## Cómo Ejecutar el Proyecto
+```bash
+npm install
+npm run dev
+```
 
-1. Clona este repositorio:
-   ```bash
-   git clone https://github.com/ldkjvvier/portafolio.git
+| Comando | Qué hace |
+| --- | --- |
+| `npm run dev` | Servidor local de desarrollo |
+| `npm run lint` | ESLint (falla con cualquier advertencia) |
+| `npm run build` | Lint, tipos, build de producción y prerender |
+| `npm run preview` | Sirve el build de producción |
 
-
+El contenido (experiencia, habilidades, proyectos y CV) vive en `src/constants`. En esos textos, lo que va entre `**` se muestra en negrita.

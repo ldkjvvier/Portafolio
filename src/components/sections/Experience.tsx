@@ -1,3 +1,4 @@
+import { RichText } from '@/components/ui/RichText';
 import { EXPERIENCES } from '@/constants/Experiences';
 
 const formatDate = (date: string) =>
@@ -59,7 +60,9 @@ const Experience = () => (
 
             <ul className="mt-4 max-w-3xl list-disc space-y-2 pl-5 text-sm leading-6 text-ink-muted marker:text-ink-faint">
               {experience.highlights.map((highlight) => (
-                <li key={highlight}>{highlight}</li>
+                <li key={highlight}>
+                  <RichText text={highlight} />
+                </li>
               ))}
             </ul>
           </article>

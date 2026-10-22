@@ -1,4 +1,5 @@
 import { FileIcon, GithubIcon, LinkedInIcon, MailIcon } from '@/components/Icons/Icons';
+import { RichText } from '@/components/ui/RichText';
 import { ABOUT_ME } from '@/constants/AboutMeData';
 import { openCvViewer } from '@/hooks/useCvViewer';
 import { showToast } from '@/hooks/useToast';
@@ -28,7 +29,7 @@ const AboutMe = () => {
       </h1>
 
       <p className="mt-6 max-w-2xl text-base leading-7 text-ink-muted sm:text-lg sm:leading-8">
-        {ABOUT_ME.description.replace('{experience}', String(experienceYears))}
+        <RichText text={ABOUT_ME.description.replace('{experience}', String(experienceYears))} />
       </p>
 
       <div className="mt-9 flex flex-wrap items-center gap-3">
@@ -61,6 +62,15 @@ const AboutMe = () => {
           </button>
         </li>
       </ul>
+
+      <dl className="mt-12 grid max-w-4xl gap-6 border-t border-line pt-8 sm:grid-cols-3 sm:gap-8" aria-label="Logros destacados">
+        {ABOUT_ME.keyFacts.map(({ value, label }) => (
+          <div key={label} className="flex flex-col-reverse gap-1">
+            <dt className="text-sm leading-6 text-ink-muted">{label}</dt>
+            <dd className="text-3xl font-semibold tracking-tight text-ink sm:text-4xl">{value}</dd>
+          </div>
+        ))}
+      </dl>
     </div>
   );
 };
