@@ -2,13 +2,10 @@ import type { Skill, SkillGroup } from '@/types/portfolio';
 
 /** Stack principal: se muestra como grilla de iconos. */
 export const SKILLS: Skill[] = [
-  { title: 'HTML5', icon: 'abilities/html.png' },
-  { title: 'CSS3', icon: 'abilities/css.png' },
   { title: 'JavaScript', icon: 'abilities/js.png' },
   { title: 'TypeScript', icon: 'abilities/Typescript.png' },
   { title: 'React', icon: 'abilities/react.png' },
   { title: 'Next.js', icon: 'abilities/nextjs.png' },
-  { title: 'Redux', icon: 'abilities/redux.png' },
   { title: 'Tailwind CSS', icon: 'abilities/tailwind.png' },
   { title: 'Node.js', icon: 'abilities/nodejs.png' },
   { title: 'MongoDB', icon: 'abilities/mongodb.png' },
@@ -32,11 +29,11 @@ export const SKILL_GROUPS: SkillGroup[] = [
   },
   {
     title: 'Frontend',
-    skills: ['React', 'Next.js', 'Redux', 'TanStack Query', 'MUI', 'Tailwind CSS', 'Bootstrap']
+    skills: ['React', 'Next.js', 'Redux', 'TanStack Query', 'MUI', 'Tailwind CSS']
   },
   {
     title: 'Backend',
-    skills: ['Node.js', 'Express', 'APIs REST', 'JWT', 'Zod', 'Mongoose', 'Multer']
+    skills: ['Node.js', 'Express', 'APIs REST', 'JWT', 'Zod', 'Mongoose']
   },
   {
     title: 'Bases de datos',
@@ -56,6 +53,6 @@ export const SKILL_GROUPS: SkillGroup[] = [
   },
   {
     title: 'Metodologías y herramientas',
-    skills: ['Git', 'Pull Requests', 'Scrum', 'Jira', 'TargetProcess']
+    skills: ['Git', 'Pull Requests', 'Scrum', 'Jira']
   }
 ];
